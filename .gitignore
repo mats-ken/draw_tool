@@ -1,0 +1,13 @@
+.svn
+.vs
+*.obj
+*.idb
+*.pdb
+*.log
+*.tlog
+*.ilk
+*.pch
+*.sdf
+*.opensdf
+*.suo
+Debug
