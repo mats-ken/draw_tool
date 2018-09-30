@@ -1,0 +1,724 @@
+Index: draw_tool.sln
+===================================================================
+--- draw_tool.sln	(revision 501)
++++ draw_tool.sln	(working copy)
+@@ -1,41 +1,37 @@
+ ﻿
+ Microsoft Visual Studio Solution File, Format Version 12.00
+-# Visual Studio Express 15 for Windows Desktop
+-VisualStudioVersion = 15.0.28010.2026
++# Visual Studio 14
++VisualStudioVersion = 14.0.25420.1
+ MinimumVisualStudioVersion = 10.0.40219.1
+-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draw_tool", "draw_tool\draw_tool.vcxproj", "{0F611D38-61DA-4A5A-8039-0BA3BF432138}"
++Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draw_tool", "draw_tool\draw_tool.vcxproj", "{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}"
+ EndProject
+ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unit_test", "unit_test\unit_test.vcxproj", "{A8197525-AB86-4645-AA53-87B3569146E6}"
+ EndProject
+ Global
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
++		Debug|Win32 = Debug|Win32
+ 		Debug|x64 = Debug|x64
+-		Debug|x86 = Debug|x86
++		Release|Win32 = Release|Win32
+ 		Release|x64 = Release|x64
+-		Release|x86 = Release|x86
+ 	EndGlobalSection
+ 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x64.ActiveCfg = Debug|x64
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x64.Build.0 = Debug|x64
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x86.ActiveCfg = Debug|Win32
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x86.Build.0 = Debug|Win32
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x64.ActiveCfg = Release|x64
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x64.Build.0 = Release|x64
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x86.ActiveCfg = Release|Win32
+-		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x86.Build.0 = Release|Win32
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.ActiveCfg = Debug|x64
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.Build.0 = Debug|x64
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x86.ActiveCfg = Debug|Win32
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x86.Build.0 = Debug|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.ActiveCfg = Debug|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.Build.0 = Debug|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.ActiveCfg = Debug|x64
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.Build.0 = Debug|x64
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.ActiveCfg = Release|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.Build.0 = Release|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.ActiveCfg = Release|x64
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.Build.0 = Release|x64
++		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|Win32.ActiveCfg = Debug|Win32
++		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|Win32.Build.0 = Debug|Win32
++		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.ActiveCfg = Debug|Win32
++		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|Win32.ActiveCfg = Release|Win32
++		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|Win32.Build.0 = Release|Win32
+ 		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|x64.ActiveCfg = Release|x64
+ 		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|x64.Build.0 = Release|x64
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|x86.ActiveCfg = Release|Win32
+-		{A8197525-AB86-4645-AA53-87B3569146E6}.Release|x86.Build.0 = Release|Win32
+ 	EndGlobalSection
+ 	GlobalSection(SolutionProperties) = preSolution
+ 		HideSolutionNode = FALSE
+ 	EndGlobalSection
+-	GlobalSection(ExtensibilityGlobals) = postSolution
+-		SolutionGuid = {FF07B30B-1F91-4C47-AE8A-FFF30A49ECC2}
+-	EndGlobalSection
+ EndGlobal
+Index: draw_tool/app.ico
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/app.rc
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/AssemblyInfo.cpp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/draw_tool.cpp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/draw_tool.vcxproj
+===================================================================
+--- draw_tool/draw_tool.vcxproj	(revision 501)
++++ draw_tool/draw_tool.vcxproj	(working copy)
+@@ -1,18 +1,18 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+       <Platform>Win32</Platform>
+     </ProjectConfiguration>
++    <ProjectConfiguration Include="Debug|x64">
++      <Configuration>Debug</Configuration>
++      <Platform>x64</Platform>
++    </ProjectConfiguration>
+     <ProjectConfiguration Include="Release|Win32">
+       <Configuration>Release</Configuration>
+       <Platform>Win32</Platform>
+     </ProjectConfiguration>
+-    <ProjectConfiguration Include="Debug|x64">
+-      <Configuration>Debug</Configuration>
+-      <Platform>x64</Platform>
+-    </ProjectConfiguration>
+     <ProjectConfiguration Include="Release|x64">
+       <Configuration>Release</Configuration>
+       <Platform>x64</Platform>
+@@ -19,57 +19,53 @@
+     </ProjectConfiguration>
+   </ItemGroup>
+   <PropertyGroup Label="Globals">
+-    <VCProjectVersion>15.0</VCProjectVersion>
+-    <ProjectGuid>{0F611D38-61DA-4A5A-8039-0BA3BF432138}</ProjectGuid>
+-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
++    <ProjectGuid>{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}</ProjectGuid>
++    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+     <Keyword>ManagedCProj</Keyword>
+-    <RootNamespace>drawtool</RootNamespace>
+-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
++    <RootNamespace>draw_tool</RootNamespace>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v141</PlatformToolset>
+-    <CLRSupport>true</CLRSupport>
++    <CLRSupport>Pure</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+-    <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v141</PlatformToolset>
+-    <CLRSupport>true</CLRSupport>
++    <UseDebugLibraries>true</UseDebugLibraries>
++    <CLRSupport>Pure</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+-    <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v141</PlatformToolset>
+-    <CLRSupport>true</CLRSupport>
++    <UseDebugLibraries>false</UseDebugLibraries>
++    <CLRSupport>Pure</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v141</PlatformToolset>
+-    <CLRSupport>true</CLRSupport>
++    <CLRSupport>Pure</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+   </ImportGroup>
+-  <ImportGroup Label="Shared">
+-  </ImportGroup>
+   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+   </ImportGroup>
+-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+   </ImportGroup>
+-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+   </ImportGroup>
+-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+@@ -87,64 +83,82 @@
+   </PropertyGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <ClCompile>
+-      <PrecompiledHeader>Use</PrecompiledHeader>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <PrecompiledHeader>Use</PrecompiledHeader>
+     </ClCompile>
+     <Link>
+-      <AdditionalDependencies />
+-      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++      <AdditionalDependencies>
++      </AdditionalDependencies>
++      <SubSystem>Windows</SubSystem>
++      <EntryPointSymbol>main</EntryPointSymbol>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <ClCompile>
+-      <PrecompiledHeader>Use</PrecompiledHeader>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <PrecompiledHeader>Use</PrecompiledHeader>
+     </ClCompile>
+     <Link>
+-      <AdditionalDependencies />
+-      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++      <AdditionalDependencies>
++      </AdditionalDependencies>
++      <SubSystem>Windows</SubSystem>
++      <EntryPointSymbol>main</EntryPointSymbol>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <ClCompile>
+-      <PrecompiledHeader>Use</PrecompiledHeader>
+       <WarningLevel>Level3</WarningLevel>
+       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <PrecompiledHeader>Use</PrecompiledHeader>
+     </ClCompile>
+     <Link>
+-      <AdditionalDependencies />
+-      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++      <AdditionalDependencies>
++      </AdditionalDependencies>
++      <SubSystem>Windows</SubSystem>
++      <EntryPointSymbol>main</EntryPointSymbol>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <PrecompiledHeader>Use</PrecompiledHeader>
+-      <WarningLevel>Level3</WarningLevel>
+-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+-      <AdditionalDependencies />
+-      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++      <AdditionalDependencies>
++      </AdditionalDependencies>
++      <SubSystem>Windows</SubSystem>
++      <EntryPointSymbol>main</EntryPointSymbol>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+-    <ClInclude Include="Form1.h">
+-      <FileType>CppForm</FileType>
+-    </ClInclude>
+-    <ClInclude Include="Resource.h" />
+-    <ClInclude Include="stdafx.h" />
++    <Reference Include="System" />
++    <Reference Include="System.Data" />
++    <Reference Include="System.Drawing" />
++    <Reference Include="System.Windows.Forms" />
++    <Reference Include="System.Xml" />
+   </ItemGroup>
+   <ItemGroup>
+-    <ResourceCompile Include="app.rc" />
++    <None Include="app.ico" />
++    <None Include="ReadMe.txt" />
+   </ItemGroup>
+   <ItemGroup>
++    <ClCompile Include="..\..\lib\dt_bitmap.cpp" />
++    <ClCompile Include="..\..\lib\dt_group.cpp" />
++    <ClCompile Include="..\..\lib\dt_layer.cpp" />
++    <ClCompile Include="..\..\lib\dt_obj.cpp" />
++    <ClCompile Include="..\..\lib\dt_path.cpp" />
++    <ClCompile Include="..\..\lib\dt_text.cpp" />
+     <ClCompile Include="AssemblyInfo.cpp" />
+     <ClCompile Include="draw_tool.cpp" />
+-    <ClCompile Include="Form1.cpp" />
+     <ClCompile Include="stdafx.cpp">
+       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+@@ -153,15 +167,32 @@
+     </ClCompile>
+   </ItemGroup>
+   <ItemGroup>
+-    <Image Include="app.ico" />
++    <ClInclude Include="..\..\lib\dt_area.h" />
++    <ClInclude Include="..\..\lib\dt_bitmap.h" />
++    <ClInclude Include="..\..\lib\dt_colour.h" />
++    <ClInclude Include="..\..\lib\dt_file.h" />
++    <ClInclude Include="..\..\lib\dt_group.h" />
++    <ClInclude Include="..\..\lib\dt_image.h" />
++    <ClInclude Include="..\..\lib\dt_layer.h" />
++    <ClInclude Include="..\..\lib\dt_obj.h" />
++    <ClInclude Include="..\..\lib\dt_path.h" />
++    <ClInclude Include="..\..\lib\dt_position.h" />
++    <ClInclude Include="..\..\lib\dt_text.h" />
++    <ClInclude Include="Form1.h">
++      <FileType>CppForm</FileType>
++    </ClInclude>
++    <ClInclude Include="resource.h" />
++    <ClInclude Include="stdafx.h" />
+   </ItemGroup>
+   <ItemGroup>
+-    <Reference Include="System" />
+-    <Reference Include="System.Data" />
+-    <Reference Include="System.Drawing" />
+-    <Reference Include="System.Windows.Forms" />
+-    <Reference Include="System.Xml" />
++    <ResourceCompile Include="app.rc" />
+   </ItemGroup>
++  <ItemGroup>
++    <EmbeddedResource Include="Form1.resX">
++      <DependentUpon>Form1.h</DependentUpon>
++      <SubType>Designer</SubType>
++    </EmbeddedResource>
++  </ItemGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+   <ImportGroup Label="ExtensionTargets">
+   </ImportGroup>
+Index: draw_tool/draw_tool.vcxproj.filters
+===================================================================
+--- draw_tool/draw_tool.vcxproj.filters	(revision 501)
++++ draw_tool/draw_tool.vcxproj.filters	(working copy)
+@@ -7,28 +7,24 @@
+     </Filter>
+     <Filter Include="ヘッダー ファイル">
+       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
++      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+     </Filter>
+     <Filter Include="リソース ファイル">
+       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+     </Filter>
++    <Filter Include="ソース ファイル\lib">
++      <UniqueIdentifier>{725f2786-79e5-434a-8b97-caa7b2980a1f}</UniqueIdentifier>
++    </Filter>
++    <Filter Include="ヘッダー ファイル\lib">
++      <UniqueIdentifier>{507f1033-6ef7-45de-bd59-b84dc409f4d6}</UniqueIdentifier>
++    </Filter>
+   </ItemGroup>
+   <ItemGroup>
+-    <ClInclude Include="stdafx.h">
+-      <Filter>ヘッダー ファイル</Filter>
+-    </ClInclude>
+-    <ClInclude Include="Resource.h">
+-      <Filter>ヘッダー ファイル</Filter>
+-    </ClInclude>
+-    <ClInclude Include="Form1.h">
+-      <Filter>ヘッダー ファイル</Filter>
+-    </ClInclude>
+-  </ItemGroup>
+-  <ItemGroup>
+-    <ResourceCompile Include="app.rc">
++    <None Include="ReadMe.txt" />
++    <None Include="app.ico">
+       <Filter>リソース ファイル</Filter>
+-    </ResourceCompile>
++    </None>
+   </ItemGroup>
+   <ItemGroup>
+     <ClCompile Include="draw_tool.cpp">
+@@ -40,13 +36,77 @@
+     <ClCompile Include="stdafx.cpp">
+       <Filter>ソース ファイル</Filter>
+     </ClCompile>
+-    <ClCompile Include="Form1.cpp">
+-      <Filter>ソース ファイル</Filter>
++    <ClCompile Include="..\..\lib\dt_path.cpp">
++      <Filter>ソース ファイル\lib</Filter>
+     </ClCompile>
++    <ClCompile Include="..\..\lib\dt_text.cpp">
++      <Filter>ソース ファイル\lib</Filter>
++    </ClCompile>
++    <ClCompile Include="..\..\lib\dt_group.cpp">
++      <Filter>ソース ファイル\lib</Filter>
++    </ClCompile>
++    <ClCompile Include="..\..\lib\dt_obj.cpp">
++      <Filter>ソース ファイル\lib</Filter>
++    </ClCompile>
++    <ClCompile Include="..\..\lib\dt_layer.cpp">
++      <Filter>ソース ファイル\lib</Filter>
++    </ClCompile>
++    <ClCompile Include="..\..\lib\dt_bitmap.cpp">
++      <Filter>ソース ファイル\lib</Filter>
++    </ClCompile>
+   </ItemGroup>
+   <ItemGroup>
+-    <Image Include="app.ico">
++    <ClInclude Include="Form1.h">
++      <Filter>ヘッダー ファイル</Filter>
++    </ClInclude>
++    <ClInclude Include="stdafx.h">
++      <Filter>ヘッダー ファイル</Filter>
++    </ClInclude>
++    <ClInclude Include="resource.h">
++      <Filter>ヘッダー ファイル</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_file.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_obj.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_path.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_position.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_colour.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_bitmap.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_area.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_text.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_layer.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_group.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++    <ClInclude Include="..\..\lib\dt_image.h">
++      <Filter>ヘッダー ファイル\lib</Filter>
++    </ClInclude>
++  </ItemGroup>
++  <ItemGroup>
++    <ResourceCompile Include="app.rc">
+       <Filter>リソース ファイル</Filter>
+-    </Image>
++    </ResourceCompile>
+   </ItemGroup>
++  <ItemGroup>
++    <EmbeddedResource Include="Form1.resX">
++      <Filter>リソース ファイル</Filter>
++    </EmbeddedResource>
++  </ItemGroup>
+ </Project>
+\ No newline at end of file
+Index: draw_tool/Form1.h
+===================================================================
+--- draw_tool/Form1.h	(revision 501)
++++ draw_tool/Form1.h	(working copy)
+@@ -8,7 +8,8 @@
+ using	namespace	std;
+ 
+ 
+-namespace drawtool {
++namespace draw_tool {
++
+ 	using namespace System;
+ 	using namespace System::ComponentModel;
+ 	using namespace System::Collections;
+@@ -613,3 +614,4 @@
+ 		}
+ 	};
+ }
++
+Index: draw_tool/Form1.resX
+===================================================================
+--- draw_tool/Form1.resX	(nonexistent)
++++ draw_tool/Form1.resX	(working copy)
+@@ -0,0 +1,129 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<root>
++  <!-- 
++    Microsoft ResX Schema 
++    
++    Version 2.0
++    
++    The primary goals of this format is to allow a simple XML format 
++    that is mostly human readable. The generation and parsing of the 
++    various data types are done through the TypeConverter classes 
++    associated with the data types.
++    
++    Example:
++    
++    ... ado.net/XML headers & schema ...
++    <resheader name="resmimetype">text/microsoft-resx</resheader>
++    <resheader name="version">2.0</resheader>
++    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
++    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
++    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
++    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
++    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
++        <value>[base64 mime encoded serialized .NET Framework object]</value>
++    </data>
++    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
++        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
++        <comment>This is a comment</comment>
++    </data>
++                
++    There are any number of "resheader" rows that contain simple 
++    name/value pairs.
++    
++    Each data row contains a name, and value. The row also contains a 
++    type or mimetype. Type corresponds to a .NET class that support 
++    text/value conversion through the TypeConverter architecture. 
++    Classes that don't support this are serialized and stored with the 
++    mimetype set.
++    
++    The mimetype is used for serialized objects, and tells the 
++    ResXResourceReader how to depersist the object. This is currently not 
++    extensible. For a given mimetype the value must be set accordingly:
++    
++    Note - application/x-microsoft.net.object.binary.base64 is the format 
++    that the ResXResourceWriter will generate, however the reader can 
++    read any of the formats listed below.
++    
++    mimetype: application/x-microsoft.net.object.binary.base64
++    value   : The object must be serialized with 
++            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
++            : and then encoded with base64 encoding.
++    
++    mimetype: application/x-microsoft.net.object.soap.base64
++    value   : The object must be serialized with 
++            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
++            : and then encoded with base64 encoding.
++
++    mimetype: application/x-microsoft.net.object.bytearray.base64
++    value   : The object must be serialized into a byte array 
++            : using a System.ComponentModel.TypeConverter
++            : and then encoded with base64 encoding.
++    -->
++  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
++    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
++    <xsd:element name="root" msdata:IsDataSet="true">
++      <xsd:complexType>
++        <xsd:choice maxOccurs="unbounded">
++          <xsd:element name="metadata">
++            <xsd:complexType>
++              <xsd:sequence>
++                <xsd:element name="value" type="xsd:string" minOccurs="0" />
++              </xsd:sequence>
++              <xsd:attribute name="name" use="required" type="xsd:string" />
++              <xsd:attribute name="type" type="xsd:string" />
++              <xsd:attribute name="mimetype" type="xsd:string" />
++              <xsd:attribute ref="xml:space" />
++            </xsd:complexType>
++          </xsd:element>
++          <xsd:element name="assembly">
++            <xsd:complexType>
++              <xsd:attribute name="alias" type="xsd:string" />
++              <xsd:attribute name="name" type="xsd:string" />
++            </xsd:complexType>
++          </xsd:element>
++          <xsd:element name="data">
++            <xsd:complexType>
++              <xsd:sequence>
++                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
++                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
++              </xsd:sequence>
++              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
++              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
++              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
++              <xsd:attribute ref="xml:space" />
++            </xsd:complexType>
++          </xsd:element>
++          <xsd:element name="resheader">
++            <xsd:complexType>
++              <xsd:sequence>
++                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
++              </xsd:sequence>
++              <xsd:attribute name="name" type="xsd:string" use="required" />
++            </xsd:complexType>
++          </xsd:element>
++        </xsd:choice>
++      </xsd:complexType>
++    </xsd:element>
++  </xsd:schema>
++  <resheader name="resmimetype">
++    <value>text/microsoft-resx</value>
++  </resheader>
++  <resheader name="version">
++    <value>2.0</value>
++  </resheader>
++  <resheader name="reader">
++    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
++  </resheader>
++  <resheader name="writer">
++    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
++  </resheader>
++  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
++    <value>17, 17</value>
++  </metadata>
++  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
++    <value>157, 17</value>
++  </metadata>
++  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
++    <value>293, 17</value>
++  </metadata>
++</root>
+\ No newline at end of file
+Index: draw_tool/ReadMe.txt
+===================================================================
+--- draw_tool/ReadMe.txt	(nonexistent)
++++ draw_tool/ReadMe.txt	(working copy)
+@@ -0,0 +1,44 @@
++﻿========================================================================
++    アプリケーション: draw_tool プロジェクトの概要
++========================================================================
++
++この draw_tool アプリケーションは、AppWizard により作成されました。  
++
++このファイルには、draw_tool 
++アプリケーションを構成する各ファイルの内容の概要が含まれています。
++
++draw_tool.vcxproj
++    これは、アプリケーション ウィザードを使用して生成された VC++ 
++    プロジェクトのメイン プロジェクト ファイルです。 
++    ファイルを生成した Visual C++ のバージョンに関する情報と、アプリケーション 
++    ウィザードで選択されたプラットフォーム、
++    構成、およびプロジェクト機能に関する情報が含まれています。
++
++draw_tool.vcxproj.filters
++    これは、アプリケーション ウィザードで生成された VC++ プロジェクトのフィルター 
++    ファイルです。 
++    このファイルには、プロジェクト内のファイルとフィルターとの間の関連付けに関する
++    情報が含まれています。 
++    この関連付けは、特定のノードで同様の拡張子を持つファイルのグループ化を
++    示すために IDE で使用されます (たとえば、".cpp" ファイルは "ソース ファイル" 
++    フィルターに関連付けられています)。
++
++draw_tool.cpp
++    これは、メインのアプリケーション ソース ファイルです。
++    フォームを表示するコードが含まれています。
++
++Form1.h
++    フォーム クラスと InitializeComponent() 関数の実装が含まれています。
++
++AssemblyInfo.cpp
++    アセンブリ メタデータを変更するカスタム属性が含まれています。
++
++/////////////////////////////////////////////////////////////////////////////
++その他の標準ファイル :
++
++StdAfx.h、StdAfx.cpp
++    これらのファイルは、draw_tool.pch 
++    という名前のプリコンパイル済みヘッダー (PCH) ファイルと、StdAfx.obj 
++    という名前のプリコンパイル済みの型ファイルを構築するために使用されます。
++
++/////////////////////////////////////////////////////////////////////////////
+Index: draw_tool/Resource.h
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/stdafx.cpp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: draw_tool/stdafx.h
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: unit_test/unit_test.vcxproj
+===================================================================
+--- unit_test/unit_test.vcxproj	(revision 501)
++++ unit_test/unit_test.vcxproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -23,7 +23,6 @@
+     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+     <Keyword>ManagedCProj</Keyword>
+     <RootNamespace>unit_test</RootNamespace>
+-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+@@ -31,7 +30,7 @@
+     <UseDebugLibraries>true</UseDebugLibraries>
+     <CLRSupport>true</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
+-    <PlatformToolset>v141</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+@@ -38,7 +37,7 @@
+     <UseDebugLibraries>true</UseDebugLibraries>
+     <CLRSupport>true</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
+-    <PlatformToolset>v141</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+@@ -45,7 +44,7 @@
+     <UseDebugLibraries>false</UseDebugLibraries>
+     <CLRSupport>true</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
+-    <PlatformToolset>v141</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+@@ -52,7 +51,7 @@
+     <UseDebugLibraries>false</UseDebugLibraries>
+     <CLRSupport>true</CLRSupport>
+     <CharacterSet>Unicode</CharacterSet>
+-    <PlatformToolset>v141</PlatformToolset>
++    <PlatformToolset>v140</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">

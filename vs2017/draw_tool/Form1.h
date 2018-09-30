@@ -18,7 +18,6 @@ namespace draw_tool {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Form1 の概要
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
@@ -32,7 +31,6 @@ namespace draw_tool {
 
 	protected:
 		/// <summary>
-		/// 使用中のリソースをすべてクリーンアップします。
 		/// </summary>
 		~Form1()
 		{
@@ -59,17 +57,35 @@ namespace draw_tool {
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
 	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
 	private: System::Windows::Forms::Label^  labelSelectedTool;
+	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^  fileToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  openToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveAsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  printToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  exportToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  editToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  undoToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  redoToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  cutToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  copyToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  pasteToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  preferencesToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  viewToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  zoomInToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  zoomOutToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  simulsaveToolStripMenuItem;
+
 
 	private:
 		/// <summary>
-		/// 必要なデザイナー変数です。
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// デザイナー サポートに必要なメソッドです。このメソッドの内容を
-		/// コード エディターで変更しないでください。
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -91,11 +107,32 @@ namespace draw_tool {
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->labelSelectedTool = (gcnew System::Windows::Forms::Label());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->exportToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->printToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->editToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->undoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->redoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->cutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->copyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->pasteToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->preferencesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->viewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->zoomInToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->zoomOutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->simulsaveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// buttonSelect
 			// 
-			this->buttonSelect->Location = System::Drawing::Point(12, 12);
+			this->buttonSelect->Location = System::Drawing::Point(12, 27);
 			this->buttonSelect->Name = L"buttonSelect";
 			this->buttonSelect->Size = System::Drawing::Size(28, 23);
 			this->buttonSelect->TabIndex = 0;
@@ -105,7 +142,7 @@ namespace draw_tool {
 			// 
 			// buttonDirectSelect
 			// 
-			this->buttonDirectSelect->Location = System::Drawing::Point(46, 12);
+			this->buttonDirectSelect->Location = System::Drawing::Point(39, 27);
 			this->buttonDirectSelect->Name = L"buttonDirectSelect";
 			this->buttonDirectSelect->Size = System::Drawing::Size(28, 23);
 			this->buttonDirectSelect->TabIndex = 1;
@@ -115,7 +152,7 @@ namespace draw_tool {
 			// 
 			// buttonPen
 			// 
-			this->buttonPen->Location = System::Drawing::Point(12, 41);
+			this->buttonPen->Location = System::Drawing::Point(12, 56);
 			this->buttonPen->Name = L"buttonPen";
 			this->buttonPen->Size = System::Drawing::Size(28, 23);
 			this->buttonPen->TabIndex = 2;
@@ -125,7 +162,7 @@ namespace draw_tool {
 			// 
 			// buttonScissors
 			// 
-			this->buttonScissors->Location = System::Drawing::Point(80, 128);
+			this->buttonScissors->Location = System::Drawing::Point(66, 143);
 			this->buttonScissors->Name = L"buttonScissors";
 			this->buttonScissors->Size = System::Drawing::Size(28, 23);
 			this->buttonScissors->TabIndex = 3;
@@ -135,7 +172,7 @@ namespace draw_tool {
 			// 
 			// buttonRectangle
 			// 
-			this->buttonRectangle->Location = System::Drawing::Point(12, 70);
+			this->buttonRectangle->Location = System::Drawing::Point(12, 85);
 			this->buttonRectangle->Name = L"buttonRectangle";
 			this->buttonRectangle->Size = System::Drawing::Size(28, 23);
 			this->buttonRectangle->TabIndex = 4;
@@ -145,7 +182,7 @@ namespace draw_tool {
 			// 
 			// buttonEllipse
 			// 
-			this->buttonEllipse->Location = System::Drawing::Point(46, 70);
+			this->buttonEllipse->Location = System::Drawing::Point(39, 85);
 			this->buttonEllipse->Name = L"buttonEllipse";
 			this->buttonEllipse->Size = System::Drawing::Size(28, 23);
 			this->buttonEllipse->TabIndex = 5;
@@ -155,7 +192,7 @@ namespace draw_tool {
 			// 
 			// buttonZoom
 			// 
-			this->buttonZoom->Location = System::Drawing::Point(12, 128);
+			this->buttonZoom->Location = System::Drawing::Point(12, 143);
 			this->buttonZoom->Name = L"buttonZoom";
 			this->buttonZoom->Size = System::Drawing::Size(28, 23);
 			this->buttonZoom->TabIndex = 6;
@@ -165,7 +202,7 @@ namespace draw_tool {
 			// 
 			// buttonAnchorPoint
 			// 
-			this->buttonAnchorPoint->Location = System::Drawing::Point(80, 12);
+			this->buttonAnchorPoint->Location = System::Drawing::Point(66, 27);
 			this->buttonAnchorPoint->Name = L"buttonAnchorPoint";
 			this->buttonAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonAnchorPoint->TabIndex = 7;
@@ -175,7 +212,7 @@ namespace draw_tool {
 			// 
 			// buttonAddAnchorPoint
 			// 
-			this->buttonAddAnchorPoint->Location = System::Drawing::Point(46, 41);
+			this->buttonAddAnchorPoint->Location = System::Drawing::Point(39, 56);
 			this->buttonAddAnchorPoint->Name = L"buttonAddAnchorPoint";
 			this->buttonAddAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonAddAnchorPoint->TabIndex = 8;
@@ -185,7 +222,7 @@ namespace draw_tool {
 			// 
 			// buttonDeleteAnchorPoint
 			// 
-			this->buttonDeleteAnchorPoint->Location = System::Drawing::Point(80, 41);
+			this->buttonDeleteAnchorPoint->Location = System::Drawing::Point(66, 56);
 			this->buttonDeleteAnchorPoint->Name = L"buttonDeleteAnchorPoint";
 			this->buttonDeleteAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonDeleteAnchorPoint->TabIndex = 9;
@@ -195,7 +232,7 @@ namespace draw_tool {
 			// 
 			// buttonType
 			// 
-			this->buttonType->Location = System::Drawing::Point(80, 70);
+			this->buttonType->Location = System::Drawing::Point(66, 85);
 			this->buttonType->Name = L"buttonType";
 			this->buttonType->Size = System::Drawing::Size(28, 23);
 			this->buttonType->TabIndex = 10;
@@ -205,7 +242,7 @@ namespace draw_tool {
 			// 
 			// buttonHand
 			// 
-			this->buttonHand->Location = System::Drawing::Point(46, 128);
+			this->buttonHand->Location = System::Drawing::Point(39, 143);
 			this->buttonHand->Name = L"buttonHand";
 			this->buttonHand->Size = System::Drawing::Size(28, 23);
 			this->buttonHand->TabIndex = 11;
@@ -215,7 +252,7 @@ namespace draw_tool {
 			// 
 			// buttonScale
 			// 
-			this->buttonScale->Location = System::Drawing::Point(12, 99);
+			this->buttonScale->Location = System::Drawing::Point(12, 114);
 			this->buttonScale->Name = L"buttonScale";
 			this->buttonScale->Size = System::Drawing::Size(28, 23);
 			this->buttonScale->TabIndex = 12;
@@ -225,7 +262,7 @@ namespace draw_tool {
 			// 
 			// buttonRotate
 			// 
-			this->buttonRotate->Location = System::Drawing::Point(46, 99);
+			this->buttonRotate->Location = System::Drawing::Point(39, 114);
 			this->buttonRotate->Name = L"buttonRotate";
 			this->buttonRotate->Size = System::Drawing::Size(28, 23);
 			this->buttonRotate->TabIndex = 13;
@@ -235,7 +272,7 @@ namespace draw_tool {
 			// 
 			// buttonReflect
 			// 
-			this->buttonReflect->Location = System::Drawing::Point(80, 99);
+			this->buttonReflect->Location = System::Drawing::Point(66, 114);
 			this->buttonReflect->Name = L"buttonReflect";
 			this->buttonReflect->Size = System::Drawing::Size(28, 23);
 			this->buttonReflect->TabIndex = 14;
@@ -250,11 +287,171 @@ namespace draw_tool {
 			// labelSelectedTool
 			// 
 			this->labelSelectedTool->AutoSize = true;
-			this->labelSelectedTool->Location = System::Drawing::Point(12, 154);
+			this->labelSelectedTool->Location = System::Drawing::Point(12, 169);
 			this->labelSelectedTool->Name = L"labelSelectedTool";
 			this->labelSelectedTool->Size = System::Drawing::Size(23, 12);
 			this->labelSelectedTool->TabIndex = 15;
 			this->labelSelectedTool->Text = L"---";
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->fileToolStripMenuItem,
+					this->editToolStripMenuItem, this->viewToolStripMenuItem, this->helpToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(624, 24);
+			this->menuStrip1->TabIndex = 16;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// fileToolStripMenuItem
+			// 
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->openToolStripMenuItem,
+					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem, this->simulsaveToolStripMenuItem, this->exportToolStripMenuItem,
+					this->printToolStripMenuItem
+			});
+			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
+			this->fileToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
+			this->fileToolStripMenuItem->Text = L"File";
+			// 
+			// openToolStripMenuItem
+			// 
+			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
+			this->openToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
+			this->openToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->openToolStripMenuItem->Text = L"Open....";
+			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openToolStripMenuItem_Click);
+			// 
+			// saveToolStripMenuItem
+			// 
+			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
+			this->saveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->saveToolStripMenuItem->Text = L"Save";
+			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
+			// 
+			// saveAsToolStripMenuItem
+			// 
+			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->saveAsToolStripMenuItem->Text = L"Save as....";
+			this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveAsToolStripMenuItem_Click);
+			// 
+			// exportToolStripMenuItem
+			// 
+			this->exportToolStripMenuItem->Name = L"exportToolStripMenuItem";
+			this->exportToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->exportToolStripMenuItem->Text = L"Export....";
+			this->exportToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exportToolStripMenuItem_Click);
+			// 
+			// printToolStripMenuItem
+			// 
+			this->printToolStripMenuItem->Name = L"printToolStripMenuItem";
+			this->printToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
+			this->printToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->printToolStripMenuItem->Text = L"Print....";
+			this->printToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::printToolStripMenuItem_Click);
+			// 
+			// editToolStripMenuItem
+			// 
+			this->editToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->undoToolStripMenuItem,
+					this->redoToolStripMenuItem, this->cutToolStripMenuItem, this->copyToolStripMenuItem, this->pasteToolStripMenuItem, this->preferencesToolStripMenuItem
+			});
+			this->editToolStripMenuItem->Name = L"editToolStripMenuItem";
+			this->editToolStripMenuItem->Size = System::Drawing::Size(39, 20);
+			this->editToolStripMenuItem->Text = L"Edit";
+			// 
+			// undoToolStripMenuItem
+			// 
+			this->undoToolStripMenuItem->Name = L"undoToolStripMenuItem";
+			this->undoToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->undoToolStripMenuItem->Text = L"Undo";
+			this->undoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::undoToolStripMenuItem_Click);
+			// 
+			// redoToolStripMenuItem
+			// 
+			this->redoToolStripMenuItem->Name = L"redoToolStripMenuItem";
+			this->redoToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->redoToolStripMenuItem->Text = L"Redo";
+			this->redoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::redoToolStripMenuItem_Click);
+			// 
+			// cutToolStripMenuItem
+			// 
+			this->cutToolStripMenuItem->Name = L"cutToolStripMenuItem";
+			this->cutToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->cutToolStripMenuItem->Text = L"Cut";
+			this->cutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::cutToolStripMenuItem_Click);
+			// 
+			// copyToolStripMenuItem
+			// 
+			this->copyToolStripMenuItem->Name = L"copyToolStripMenuItem";
+			this->copyToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->copyToolStripMenuItem->Text = L"Copy";
+			this->copyToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::copyToolStripMenuItem_Click);
+			// 
+			// pasteToolStripMenuItem
+			// 
+			this->pasteToolStripMenuItem->Name = L"pasteToolStripMenuItem";
+			this->pasteToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->pasteToolStripMenuItem->Text = L"Paste";
+			this->pasteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::pasteToolStripMenuItem_Click);
+			// 
+			// preferencesToolStripMenuItem
+			// 
+			this->preferencesToolStripMenuItem->Name = L"preferencesToolStripMenuItem";
+			this->preferencesToolStripMenuItem->Size = System::Drawing::Size(135, 22);
+			this->preferencesToolStripMenuItem->Text = L"Preferences";
+			this->preferencesToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::preferencesToolStripMenuItem_Click);
+			// 
+			// viewToolStripMenuItem
+			// 
+			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->zoomInToolStripMenuItem,
+					this->zoomOutToolStripMenuItem
+			});
+			this->viewToolStripMenuItem->Name = L"viewToolStripMenuItem";
+			this->viewToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->viewToolStripMenuItem->Text = L"View";
+			// 
+			// zoomInToolStripMenuItem
+			// 
+			this->zoomInToolStripMenuItem->Name = L"zoomInToolStripMenuItem";
+			this->zoomInToolStripMenuItem->Size = System::Drawing::Size(128, 22);
+			this->zoomInToolStripMenuItem->Text = L"Zoom In";
+			this->zoomInToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::zoomInToolStripMenuItem_Click);
+			// 
+			// zoomOutToolStripMenuItem
+			// 
+			this->zoomOutToolStripMenuItem->Name = L"zoomOutToolStripMenuItem";
+			this->zoomOutToolStripMenuItem->Size = System::Drawing::Size(128, 22);
+			this->zoomOutToolStripMenuItem->Text = L"Zoom Out";
+			this->zoomOutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::zoomOutToolStripMenuItem_Click);
+			// 
+			// helpToolStripMenuItem
+			// 
+			this->helpToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->aboutToolStripMenuItem });
+			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->helpToolStripMenuItem->Text = L"Help";
+			// 
+			// aboutToolStripMenuItem
+			// 
+			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(119, 22);
+			this->aboutToolStripMenuItem->Text = L"About....";
+			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
+			// 
+			// simulsaveToolStripMenuItem
+			// 
+			this->simulsaveToolStripMenuItem->Name = L"simulsaveToolStripMenuItem";
+			this->simulsaveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>(((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Alt)
+				| System::Windows::Forms::Keys::S));
+			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->simulsaveToolStripMenuItem->Text = L"Simul-save";
 			// 
 			// Form1
 			// 
@@ -277,9 +474,13 @@ namespace draw_tool {
 			this->Controls->Add(this->buttonPen);
 			this->Controls->Add(this->buttonDirectSelect);
 			this->Controls->Add(this->buttonSelect);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
 			this->MinimumSize = System::Drawing::Size(640, 480);
 			this->Name = L"Form1";
-			this->Text = L"My Drawer";
+			this->Text = L"My Drawer v0.3";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -376,6 +577,40 @@ namespace draw_tool {
 		}
 		System::Void buttonScissors_Click(System::Object^  sender, System::EventArgs^  e) {
 			proc_tool_buttons("Scissors");
+		}
+
+		// menu
+		// file
+		System::Void openToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void exportToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void printToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		// edit
+		System::Void undoToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void redoToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void cutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void copyToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void pasteToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void preferencesToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		// view
+		System::Void zoomInToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void zoomOutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		// help
+		System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
 	};
 }

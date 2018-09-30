@@ -10,4 +10,12 @@
 *.sdf
 *.opensdf
 *.suo
+*.asm
+*.res
+*.resources
+*.metagen
+*.db
+*.ipch
+*.opendb
+*.rej
 Debug

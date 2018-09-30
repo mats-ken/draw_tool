@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A8197525-AB86-4645-AA53-87B3569146E6}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>unit_test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\lib\dt_area.h" />
+    <ClInclude Include="..\..\lib\dt_bitmap.h" />
+    <ClInclude Include="..\..\lib\dt_colour.h" />
+    <ClInclude Include="..\..\lib\dt_file.h" />
+    <ClInclude Include="..\..\lib\dt_group.h" />
+    <ClInclude Include="..\..\lib\dt_image.h" />
+    <ClInclude Include="..\..\lib\dt_layer.h" />
+    <ClInclude Include="..\..\lib\dt_obj.h" />
+    <ClInclude Include="..\..\lib\dt_path.h" />
+    <ClInclude Include="..\..\lib\dt_position.h" />
+    <ClInclude Include="..\..\lib\dt_text.h" />
+    <ClInclude Include="..\..\unit_test\dt_colour\test_colour.h" />
+    <ClInclude Include="..\..\unit_test\dt_colour\test_colour_to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group.h" />
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_postscript.h" />
+    <ClInclude Include="..\..\unit_test\dt_obj\test_dt_obj__to_postscript.h" />
+    <ClInclude Include="..\..\unit_test\dt_obj\test_obj.h" />
+    <ClInclude Include="..\..\unit_test\dt_obj\test_obj_to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_path\test_path.h" />
+    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_postscript.h" />
+    <ClInclude Include="..\..\unit_test\dt_position\test_position.h" />
+    <ClInclude Include="..\..\unit_test\dt_position\test_position_to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_text\test_text.h" />
+    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_from_string.h" />
+    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_postscript.h" />
+    <ClInclude Include="..\..\unit_test\test_dt_layer\test_dt_layer.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\dt_bitmap.cpp" />
+    <ClCompile Include="..\..\lib\dt_file.cpp" />
+    <ClCompile Include="..\..\lib\dt_group.cpp" />
+    <ClCompile Include="..\..\lib\dt_layer.cpp" />
+    <ClCompile Include="..\..\lib\dt_obj.cpp" />
+    <ClCompile Include="..\..\lib\dt_path.cpp" />
+    <ClCompile Include="..\..\lib\dt_text.cpp" />
+    <ClCompile Include="..\..\unit_test\common\create_data.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_colour\test_colour.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_colour\test_colour_to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group__to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group__to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_obj\test_dt_obj__to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_obj\test_obj.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_obj\test_obj_to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_path\test_path.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_position\test_position.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_position\test_position_to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_text\test_text.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file__to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file__to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_from_string.cpp" />
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_postscript.cpp" />
+    <ClCompile Include="..\..\unit_test\unit_test_main.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="unit_test.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

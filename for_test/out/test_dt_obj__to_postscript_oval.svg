@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MyDrawer  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
+<path
+stroke="#2d1e0f" stroke-width="12" fill="#00b2cc"
+d="
+M200,300
+C255.228 300,300 344.772,300 400
+C300 455.228,255.228 500,200 500
+C144.772 500,100 455.228,100 400
+C100 344.772,144.772 300,200 300
+Z
+"/>
+<path
+stroke="#00b2cc" stroke-width="23" fill="#2d1e0f"
+d="
+M150,400
+C177.614 400,200 422.386,200 450
+C200 477.614,177.614 500,150 500
+C122.386 500,100 477.614,100 450
+C100 422.386,122.386 400,150 400
+Z
+"/>
+</svg>

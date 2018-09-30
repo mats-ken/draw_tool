@@ -42,6 +42,18 @@
     <ClCompile Include="..\..\lib\dt_text.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\lib\dt_group.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_obj.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_layer.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_bitmap.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -75,6 +87,15 @@
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
     <ClInclude Include="..\..\lib\dt_text.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_layer.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_group.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_image.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
   </ItemGroup>
