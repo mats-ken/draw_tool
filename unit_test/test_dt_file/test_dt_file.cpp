@@ -19,6 +19,7 @@ void	test_dt_file(void)
 	cout << __FUNCTION__ << endl;
 
 	test_dt_file__to_from_string_path1();
+	test_dt_file__to_from_string_path1000_text1000();
 	//test_dt_file__to_from_string();
 
 	test_dt_file__to_postscript();
