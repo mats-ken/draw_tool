@@ -1,8 +1,8 @@
 Index: draw_tool.sln
 ===================================================================
---- draw_tool.sln	(revision 501)
+--- draw_tool.sln	(revision 652)
 +++ draw_tool.sln	(working copy)
-@@ -1,41 +1,37 @@
+@@ -1,7 +1,7 @@
  ﻿
  Microsoft Visual Studio Solution File, Format Version 12.00
 -# Visual Studio Express 15 for Windows Desktop
@@ -10,10 +10,9 @@ Index: draw_tool.sln
 +# Visual Studio 14
 +VisualStudioVersion = 14.0.25420.1
  MinimumVisualStudioVersion = 10.0.40219.1
--Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draw_tool", "draw_tool\draw_tool.vcxproj", "{0F611D38-61DA-4A5A-8039-0BA3BF432138}"
-+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draw_tool", "draw_tool\draw_tool.vcxproj", "{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}"
+ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draw_tool", "draw_tool\draw_tool.vcxproj", "{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}"
  EndProject
- Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unit_test", "unit_test\unit_test.vcxproj", "{A8197525-AB86-4645-AA53-87B3569146E6}"
+@@ -9,33 +9,29 @@
  EndProject
  Global
  	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,26 +24,22 @@ Index: draw_tool.sln
 -		Release|x86 = Release|x86
  	EndGlobalSection
  	GlobalSection(ProjectConfigurationPlatforms) = postSolution
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x64.ActiveCfg = Debug|x64
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x64.Build.0 = Debug|x64
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x86.ActiveCfg = Debug|Win32
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Debug|x86.Build.0 = Debug|Win32
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x64.ActiveCfg = Release|x64
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x64.Build.0 = Release|x64
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x86.ActiveCfg = Release|Win32
--		{0F611D38-61DA-4A5A-8039-0BA3BF432138}.Release|x86.Build.0 = Release|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.ActiveCfg = Debug|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.Build.0 = Debug|Win32
+ 		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.ActiveCfg = Debug|x64
+ 		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.Build.0 = Debug|x64
+-		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x86.ActiveCfg = Debug|Win32
+-		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x86.Build.0 = Debug|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.ActiveCfg = Release|Win32
++		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.Build.0 = Release|Win32
+ 		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.ActiveCfg = Release|x64
+ 		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.Build.0 = Release|x64
+-		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x86.ActiveCfg = Release|Win32
+-		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x86.Build.0 = Release|Win32
 -		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.ActiveCfg = Debug|x64
 -		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.Build.0 = Debug|x64
 -		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x86.ActiveCfg = Debug|Win32
 -		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x86.Build.0 = Debug|Win32
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.ActiveCfg = Debug|Win32
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|Win32.Build.0 = Debug|Win32
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.ActiveCfg = Debug|x64
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Debug|x64.Build.0 = Debug|x64
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.ActiveCfg = Release|Win32
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|Win32.Build.0 = Release|Win32
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.ActiveCfg = Release|x64
-+		{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}.Release|x64.Build.0 = Release|x64
 +		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|Win32.ActiveCfg = Debug|Win32
 +		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|Win32.Build.0 = Debug|Win32
 +		{A8197525-AB86-4645-AA53-87B3569146E6}.Debug|x64.ActiveCfg = Debug|Win32
@@ -66,21 +61,13 @@ Index: draw_tool/app.ico
 ===================================================================
 Cannot display: file marked as a binary type.
 svn:mime-type = application/octet-stream
-Index: draw_tool/app.rc
-===================================================================
-Cannot display: file marked as a binary type.
-svn:mime-type = application/octet-stream
 Index: draw_tool/AssemblyInfo.cpp
-===================================================================
-Cannot display: file marked as a binary type.
-svn:mime-type = application/octet-stream
-Index: draw_tool/draw_tool.cpp
 ===================================================================
 Cannot display: file marked as a binary type.
 svn:mime-type = application/octet-stream
 Index: draw_tool/draw_tool.vcxproj
 ===================================================================
---- draw_tool/draw_tool.vcxproj	(revision 501)
+--- draw_tool/draw_tool.vcxproj	(revision 652)
 +++ draw_tool/draw_tool.vcxproj	(working copy)
 @@ -1,18 +1,18 @@
 -<?xml version="1.0" encoding="utf-8"?>
@@ -112,14 +99,12 @@ Index: draw_tool/draw_tool.vcxproj
    </ItemGroup>
    <PropertyGroup Label="Globals">
 -    <VCProjectVersion>15.0</VCProjectVersion>
--    <ProjectGuid>{0F611D38-61DA-4A5A-8039-0BA3BF432138}</ProjectGuid>
+     <ProjectGuid>{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}</ProjectGuid>
 -    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-+    <ProjectGuid>{3AABEC35-1DC1-46FA-948F-1B27A2C0897B}</ProjectGuid>
 +    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
      <Keyword>ManagedCProj</Keyword>
--    <RootNamespace>drawtool</RootNamespace>
+     <RootNamespace>draw_tool</RootNamespace>
 -    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-+    <RootNamespace>draw_tool</RootNamespace>
    </PropertyGroup>
    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -328,7 +313,7 @@ Index: draw_tool/draw_tool.vcxproj
    </ImportGroup>
 Index: draw_tool/draw_tool.vcxproj.filters
 ===================================================================
---- draw_tool/draw_tool.vcxproj.filters	(revision 501)
+--- draw_tool/draw_tool.vcxproj.filters	(revision 652)
 +++ draw_tool/draw_tool.vcxproj.filters	(working copy)
 @@ -7,28 +7,24 @@
      </Filter>
@@ -452,25 +437,6 @@ Index: draw_tool/draw_tool.vcxproj.filters
 +  </ItemGroup>
  </Project>
 \ No newline at end of file
-Index: draw_tool/Form1.h
-===================================================================
---- draw_tool/Form1.h	(revision 501)
-+++ draw_tool/Form1.h	(working copy)
-@@ -8,7 +8,8 @@
- using	namespace	std;
- 
- 
--namespace drawtool {
-+namespace draw_tool {
-+
- 	using namespace System;
- 	using namespace System::ComponentModel;
- 	using namespace System::Collections;
-@@ -613,3 +614,4 @@
- 		}
- 	};
- }
-+
 Index: draw_tool/Form1.resX
 ===================================================================
 --- draw_tool/Form1.resX	(nonexistent)
@@ -659,17 +625,9 @@ Index: draw_tool/Resource.h
 ===================================================================
 Cannot display: file marked as a binary type.
 svn:mime-type = application/octet-stream
-Index: draw_tool/stdafx.cpp
-===================================================================
-Cannot display: file marked as a binary type.
-svn:mime-type = application/octet-stream
-Index: draw_tool/stdafx.h
-===================================================================
-Cannot display: file marked as a binary type.
-svn:mime-type = application/octet-stream
 Index: unit_test/unit_test.vcxproj
 ===================================================================
---- unit_test/unit_test.vcxproj	(revision 501)
+--- unit_test/unit_test.vcxproj	(revision 652)
 +++ unit_test/unit_test.vcxproj	(working copy)
 @@ -1,5 +1,5 @@
  ﻿<?xml version="1.0" encoding="utf-8"?>

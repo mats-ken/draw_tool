@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
+<!-- Generator: MyDrawer -->
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 1000 600" >
+
 <path
 stroke="#2d1e0f" stroke-width="12" fill="#00b2cc"
 d="
@@ -11,6 +15,8 @@ C300 300,300 500,300 500
 C300 500,100 500,100 500
 Z
 "/>
+
+
 <path
 stroke="#00b2cc" stroke-width="23" fill="#2d1e0f"
 d="
@@ -20,4 +26,6 @@ C200 400,200 500,200 500
 C200 500,100 500,100 500
 Z
 "/>
+
+
 </svg>

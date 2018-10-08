@@ -21,7 +21,7 @@ const	string	dt_layer::to_string(void) const
 		<< (int)visible << endl;
 
 	ss << groups.size() << endl;
-	for (auto g : groups) {
+	for (const auto g : groups) {
 		ss << g.to_string();
 	}
 
@@ -86,19 +86,22 @@ const	string	dt_layer::to_svg(const bool finalise) const
 
 	if (finalise) {
 		ss << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
+<!-- Generator: MyDrawer -->
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 1000 600" >
 
 )###";
 	}
 
-	for (auto g : groups) {
+	for (const auto g : groups) {
 		ss << g.to_svg();
 	}
 
 	if (finalise) {
-		ss << endl << endl << "</svg>" << endl;
+		ss << "</svg>" << endl;
 	}
 
 	return	ss.str();
@@ -118,7 +121,7 @@ const	string	dt_layer::to_postscript(const bool finalise) const
 		ss << "%!" << endl;
 	}
 
-	for (auto g : groups) {
+	for (const auto g : groups) {
 		ss << g.to_postscript();
 	}
 

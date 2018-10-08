@@ -52,13 +52,7 @@ void	test_dt_layer__to_postscript_oval(void)
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_svg() << endl
-		<< "</svg>" << endl;
+	ofs2 << grp.to_svg(true);
 	ofs2.close();
 }
 
@@ -81,13 +75,7 @@ void	test_dt_layer__to_postscript_rectangle(void)
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_svg() << endl
-		<< "</svg>" << endl;
+	ofs2 << grp.to_svg(true);
 	ofs2.close();
 }
 
@@ -110,12 +98,6 @@ void	test_dt_layer__to_postscript_text(void)
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_svg() << endl
-		<< "</svg>" << endl;
+	ofs2 << grp.to_svg(true);
 	ofs2.close();
 }

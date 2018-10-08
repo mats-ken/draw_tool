@@ -4,19 +4,20 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="494.875" height="387.896" viewBox="0 0 494.875 387.896"
-	 overflow="visible" enable-background="new 0 0 494.875 387.896" xml:space="preserve">
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="596.275" height="842.891" viewBox="0 0 596.275 842.891"
+	 overflow="visible" enable-background="new 0 0 596.275 842.891" xml:space="preserve">
 <g id="レイヤー_1">
-	<ellipse fill="#FFFFFF" stroke="#000000" cx="64.042" cy="287.917" rx="63.542" ry="67.188"/>
-	<ellipse fill="#FFFFFF" stroke="#000000" cx="116.646" cy="357.188" rx="44.271" ry="30.208"/>
+	<rect x="0.5" y="0.5" fill="#C7E8FA" stroke="#000000" width="595.275" height="841.891"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" cx="141.083" cy="602.188" rx="63.542" ry="67.188"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" cx="193.688" cy="671.459" rx="44.271" ry="30.208"/>
 </g>
 <g id="レイヤー_2">
-	<ellipse fill="#FFFFFF" stroke="#000000" cx="157.271" cy="240" rx="99.479" ry="36.979"/>
-	<ellipse fill="#FFFFFF" stroke="#000000" cx="274.458" cy="187.396" rx="48.958" ry="46.875"/>
-	<text transform="matrix(1 0 0 1 176.5415 10.3125)" font-family="'MS-Gothic'" font-size="12">Test string 1.</text>
-	<rect x="48.417" y="51.979" fill="none" width="118.75" height="130.209"/>
-	<text transform="matrix(1 0 0 1 48.417 62.2915)"><tspan x="0" y="0" font-family="'MS-Gothic'" font-size="12">Test string 2. Test </tspan><tspan x="0" y="21" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="42" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="63" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="84" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="105" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan></text>
-	<rect x="284.875" y="80.104" fill="none" width="208.333" height="150"/>
-	<text transform="matrix(1 0 0 1 284.8755 90.4165)"><tspan x="0" y="0" font-family="'MS-Gothic'" font-size="12">Test string 3. Test string 3. Test </tspan><tspan x="0" y="21" font-family="'MS-Gothic'" font-size="12">string 3. Test string 3. Test </tspan><tspan x="0" y="42" font-family="'MS-Gothic'" font-size="12">string 3. </tspan></text>
+	<ellipse fill="#FFFFFF" stroke="#000000" cx="234.313" cy="554.271" rx="99.479" ry="36.979"/>
+	<ellipse fill="#FFFFFF" stroke="#000000" cx="351.5" cy="501.667" rx="48.958" ry="46.875"/>
+	<text transform="matrix(1 0 0 1 253.583 324.5835)" font-family="'MS-Gothic'" font-size="12">Test string 1.</text>
+	<rect x="125.458" y="366.25" fill="none" width="118.75" height="130.209"/>
+	<text transform="matrix(1 0 0 1 125.4585 376.563)"><tspan x="0" y="0" font-family="'MS-Gothic'" font-size="12">Test string 2. Test </tspan><tspan x="0" y="21" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="42" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="63" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="84" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan><tspan x="0" y="105" font-family="'MS-Gothic'" font-size="12">string 2. Test </tspan></text>
+	<rect x="361.917" y="394.375" fill="none" width="208.333" height="150"/>
+	<text transform="matrix(1 0 0 1 361.917 404.687)"><tspan x="0" y="0" font-family="'MS-Gothic'" font-size="12">Test string 3. Test string 3. Test </tspan><tspan x="0" y="21" font-family="'MS-Gothic'" font-size="12">string 3. Test string 3. Test </tspan><tspan x="0" y="42" font-family="'MS-Gothic'" font-size="12">string 3. </tspan></text>
 </g>
 </svg>

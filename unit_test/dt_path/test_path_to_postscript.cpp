@@ -69,9 +69,13 @@ void	test_path_to_postscript_oval(void)
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
 	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
+<!-- Generator: MyDrawer -->
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 1000 600" >
+
 )###"
 		<< oval1.to_svg() << endl
 		<< oval2.to_svg() << endl
@@ -98,9 +102,13 @@ void	test_path_to_postscript_rectangle(void)
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
 	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
+<!-- Generator: MyDrawer -->
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 1000 600" >
+
 )###"
 		<< rect1.to_svg() << endl
 		<< rect2.to_svg() << endl

@@ -2,10 +2,18 @@
 
 
 #include	<string>
+#include <vector>
 #include	<map>
+
+#include “dt_file.h”
 
 
 using	namespace	std;
+
+
+vector<dt_file> files;
+vector<size_t> current_layers;
+vector<dt_area> current_areas;
 
 
 namespace draw_tool {

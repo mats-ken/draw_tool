@@ -20,5 +20,9 @@ void	test_dt_file(void)
 
 	test_dt_file__to_from_string_path1();
 	//test_dt_file__to_from_string();
-	//test_dt_file__to_postscript();
+
+	test_dt_file__to_postscript();
+	test_dt_file__to_postscript_oval();
+	test_dt_file__to_postscript_rectangle();
+	test_dt_file__to_postscript_text();
 }

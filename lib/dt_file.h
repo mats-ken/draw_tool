@@ -43,7 +43,7 @@ public:
 	const	std::string	to_xml(void) const;
 	void	from_xml(const std::string&str);
 
-	const	std::string	to_svg(const bool finalise = false) const;
+	const	std::string	to_svg(const bool finalise = false, double width = 0.0, double height = 0.0) const;
 	void	from_svg(const std::string&str);
 
 	const	std::string	to_postscript(const bool finalise = false) const;

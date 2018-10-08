@@ -3,7 +3,7 @@
 
 #include	<iostream>
 
-#include	"../../lib/dt_group.h"
+#include	"../../lib/dt_file.h"
 
 #include	"../../CUnit/CUnit.h"
 
@@ -18,13 +18,26 @@ using	namespace	std;
 void	test_dt_file__to_postscript(void)
 {
 	const	dt_obj		obj(create_path2());
-			dt_group	grp;
 
+	dt_group	grp;
 	grp.objects.push_back(obj);
 
+	dt_layer	layer;
+	layer.groups.push_back(grp);
+
+	dt_file		file;
+	file.layers.push_back(layer);
+
+
+	// to postscript
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".ps");
-	ofs << grp.to_postscript(true);
+	ofs << file.to_postscript(true);
 	ofs.close();
+
+	// to svg
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
+	ofs2 << file.to_svg(true);
+	ofs2.close();
 }
 
 
@@ -32,28 +45,26 @@ void	test_dt_file__to_postscript_oval(void)
 {
 	const	dt_obj		obj1(create_path_oval1());
 	const	dt_obj		obj2(create_path_oval2());
-			dt_group	grp;
 
+	dt_group	grp;
 	grp.objects.push_back(obj1);
 	grp.objects.push_back(obj2);
+
+	dt_layer	layer;
+	layer.groups.push_back(grp);
+
+	dt_file		file;
+	file.layers.push_back(layer);
 
 
 	// to postscript
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".ps");
-	ofs << "%!" << endl
-		<< grp.to_postscript() << endl
-		<< "showpage" << endl;
+	ofs << file.to_postscript(true);
 	ofs.close();
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_postscript() << endl
-		<< "</svg>" << endl;
+	ofs2 << file.to_svg(true);
 	ofs2.close();
 }
 
@@ -63,26 +74,25 @@ void	test_dt_file__to_postscript_rectangle(void)
 	const	dt_obj		obj1(create_path_rect1());
 	const	dt_obj		obj2(create_path_rect2());
 
-			dt_group	grp;
-
+	dt_group	grp;
 	grp.objects.push_back(obj1);
 	grp.objects.push_back(obj2);
+
+	dt_layer	layer;
+	layer.groups.push_back(grp);
+
+	dt_file		file;
+	file.layers.push_back(layer);
 
 
 	// to postscript
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".ps");
-	ofs << grp.to_postscript(true);
+	ofs << file.to_postscript(true);
 	ofs.close();
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_postscript() << endl
-		<< "</svg>" << endl;
+	ofs2 << file.to_svg(true);
 	ofs2.close();
 }
 
@@ -92,25 +102,24 @@ void	test_dt_file__to_postscript_text(void)
 	const	dt_obj		obj1(create_text());
 	const	dt_obj		obj2(create_text_rand());
 
-			dt_group	grp;
-
+	dt_group	grp;
 	grp.objects.push_back(obj1);
 	grp.objects.push_back(obj2);
+
+	dt_layer	layer;
+	layer.groups.push_back(grp);
+
+	dt_file		file;
+	file.layers.push_back(layer);
 
 
 	// to postscript
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".ps");
-	ofs << grp.to_postscript(true);
+	ofs << file.to_postscript(true);
 	ofs.close();
 
 	// to svg
 	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- MyDrawer  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-viewBox="0 0 1000 600" style="enable - background:new 0 0 1000 600; " xml:space="preserve">
-)###"
-		<< grp.to_postscript() << endl
-		<< "</svg>" << endl;
+	ofs2 << file.to_svg(true);
 	ofs2.close();
 }
