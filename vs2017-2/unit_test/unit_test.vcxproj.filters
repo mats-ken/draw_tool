@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\lib">
+      <UniqueIdentifier>{713b7f9b-2329-47bc-b0db-4b1282a88553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\lib">
+      <UniqueIdentifier>{cf748a5f-1a88-477e-aeb3-a56eb93aed86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test">
+      <UniqueIdentifier>{061b245a-959b-4165-86b4-030d2f5884f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test">
+      <UniqueIdentifier>{1c397dcf-ee74-430e-b9ad-fcad9c2e018e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\1.test_dt_file">
+      <UniqueIdentifier>{4c039754-fbb9-4030-859c-cc71e6a20610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\2.test_dt_layer">
+      <UniqueIdentifier>{206cdbda-0e74-4d16-b40c-281d1abec897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\3.test_dt_group">
+      <UniqueIdentifier>{6ee22da7-b556-4329-af04-908aba8c5aec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\4.test_dt_obj">
+      <UniqueIdentifier>{6dfb1f73-1889-4885-8266-04fa1148cb9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\5.test_dt_path">
+      <UniqueIdentifier>{271c823f-c3e6-4991-b11d-9171ad3668b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\5.test_dt_text">
+      <UniqueIdentifier>{e28302fc-9bf8-4696-90cb-4d8efa2ae69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\6.test_dt_colour">
+      <UniqueIdentifier>{f6149407-5554-48b9-962d-a9ccd7a6b6b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\unit_test\6.test_dt_position">
+      <UniqueIdentifier>{f59e7ae7-4522-4785-b1e0-241926268e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\6.test_dt_position">
+      <UniqueIdentifier>{5c667171-d616-4fc9-b73a-59682fddd325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\6.test_dt_colour">
+      <UniqueIdentifier>{03ebd768-16e3-40c2-89f3-3e442c476906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\2.test_dt_layer">
+      <UniqueIdentifier>{2c06b9c6-568b-4e6a-9cc8-c075faf61c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\3.test_dt_group">
+      <UniqueIdentifier>{8e1506a4-91ed-4d04-9663-9138ae68ee97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\4.test_dt_obj">
+      <UniqueIdentifier>{580ea7fb-7c4a-485b-b7f6-8f3211d35122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\5.test_dt_path">
+      <UniqueIdentifier>{b0bfbb88-2495-4597-91d3-449f509aac2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\5.test_dt_text">
+      <UniqueIdentifier>{ace586b3-424c-4367-a0e9-83020333aa6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\unit_test\1.test_dt_file">
+      <UniqueIdentifier>{ac659907-63c1-4c41-9ddc-d5d8fa2a22fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="app.ico">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_area.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_bitmap.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_colour.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_file.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_obj.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_path.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_position.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_text.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_path\test_path.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_position\test_position_to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\6.test_dt_position</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_position\test_position.h">
+      <Filter>ヘッダー ファイル\unit_test\6.test_dt_position</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_layer.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_colour\test_colour_to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_colour\test_colour.h">
+      <Filter>ヘッダー ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_group.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\3.test_dt_group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group.h">
+      <Filter>ヘッダー ファイル\unit_test\3.test_dt_group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_obj\test_obj_to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_obj\test_obj.h">
+      <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_text\test_text.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_layer\test_dt_layer.h">
+      <Filter>ヘッダー ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_image.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\3.test_dt_group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\dt_obj\test_dt_obj__to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="unit_test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_path.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_text.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_position\test_position.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_position\test_position_to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_path.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_colour\test_colour_to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_colour\test_colour.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_text.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\unit_test_main.cpp">
+      <Filter>ソース ファイル\unit_test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_group.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_obj.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_layer.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_obj\test_obj.cpp">
+      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_obj\test_obj_to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group.cpp">
+      <Filter>ソース ファイル\unit_test\3.test_dt_group</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\3.test_dt_group</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\common\create_data.cpp">
+      <Filter>ソース ファイル\unit_test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer.cpp">
+      <Filter>ソース ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_bitmap.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file.cpp">
+      <Filter>ソース ファイル\unit_test\1.test_dt_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_obj\test_dt_obj__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_group\test_dt_group__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\3.test_dt_group</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\1.test_dt_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\1.test_dt_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_file.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
