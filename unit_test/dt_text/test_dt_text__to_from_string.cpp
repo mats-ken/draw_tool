@@ -9,7 +9,7 @@
 
 #include	"../common/create_data.h"
 
-#include	"test_text_to_from_string.h"
+#include	"test_dt_text__to_from_string.h"
 
 
 using	namespace	std;

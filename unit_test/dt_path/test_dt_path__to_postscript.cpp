@@ -10,7 +10,7 @@
 
 #include	"../common/create_data.h"
 
-#include	"test_path_to_postscript.h"
+#include	"test_dt_path__to_postscript.h"
 
 
 using	namespace	std;

@@ -5,10 +5,10 @@
 
 #include	"../../CUnit/CUnit.h"
 
-#include	"test_obj_to_from_string.h"
+#include	"test_dt_obj__to_from_string.h"
 #include	"test_dt_obj__to_postscript.h"
 
-#include	"test_obj.h"
+#include	"test_dt_obj.h"
 
 
 using	namespace	std;

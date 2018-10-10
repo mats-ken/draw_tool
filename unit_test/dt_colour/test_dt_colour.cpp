@@ -7,7 +7,7 @@
 
 #include	"../../CUnit/CUnit.h"
 
-#include	"test_colour_to_from_string.h"
+#include	"test_dt_colour__to_from_string.h"
 
 
 using	namespace	std;

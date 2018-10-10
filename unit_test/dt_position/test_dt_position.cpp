@@ -5,7 +5,7 @@
 
 #include	"../../CUnit/CUnit.h"
 
-#include	"test_position_to_from_string.h"
+#include	"test_dt_position__to_from_string.h"
 
 
 using	namespace	std;

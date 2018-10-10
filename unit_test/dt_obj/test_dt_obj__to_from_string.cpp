@@ -11,7 +11,7 @@
 
 #include	"../common/create_data.h"
 
-#include	"test_obj_to_from_string.h"
+#include	"test_dt_obj__to_from_string.h"
 
 
 using	namespace	std;

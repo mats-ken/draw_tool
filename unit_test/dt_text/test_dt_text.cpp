@@ -5,8 +5,8 @@
 
 #include	"../../CUnit/CUnit.h"
 
-#include	"test_text_to_from_string.h"
-#include	"test_text_to_postscript.h"
+#include	"test_dt_text__to_from_string.h"
+#include	"test_dt_text__to_postscript.h"
 
 
 using	namespace	std;

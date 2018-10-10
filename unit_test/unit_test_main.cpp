@@ -10,11 +10,11 @@
 #include	"../CUnit/CUnit.h"
 
 
-#include	"dt_colour/test_colour.h"
-#include	"dt_position/test_position.h"
-#include	"dt_path/test_path.h"
-#include	"dt_text/test_text.h"
-#include	"dt_obj/test_obj.h"
+#include	"dt_colour/test_dt_colour.h"
+#include	"dt_position/test_dt_position.h"
+#include	"dt_path/test_dt_path.h"
+#include	"dt_text/test_dt_text.h"
+#include	"dt_obj/test_dt_obj.h"
 #include	"dt_group/test_dt_group.h"
 #include	"test_dt_layer/test_dt_layer.h"
 #include	"test_dt_file/test_dt_file.h"
