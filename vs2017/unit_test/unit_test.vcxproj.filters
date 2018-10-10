@@ -171,6 +171,21 @@
     <ClInclude Include="..\..\unit_test\dt_obj\test_dt_obj__to_postscript.h">
       <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_layer\test_dt_layer__to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\2.test_dt_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_file\test_dt_file.h">
+      <Filter>ヘッダー ファイル\unit_test\1.test_dt_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_file\test_dt_file__to_from_string.h">
+      <Filter>ヘッダー ファイル\unit_test\1.test_dt_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unit_test\test_dt_file\test_dt_file__to_postscript.h">
+      <Filter>ヘッダー ファイル\unit_test\1.test_dt_file</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
