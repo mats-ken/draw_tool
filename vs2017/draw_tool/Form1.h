@@ -14,6 +14,7 @@ using	namespace	std;
 vector<dt_file>		files;
 vector<size_t>		current_layers;
 vector<dt_area>		current_areas;
+vector<dt_bitmap>	masks;
 
 
 namespace draw_tool {
