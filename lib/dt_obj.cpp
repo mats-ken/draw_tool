@@ -17,7 +17,7 @@ const	string	dt_obj::to_string(void) const
 {
 	stringstream ss;
 
-	ss	<< "OBJECT" << endl	// object_type
+	ss	<< "[OBJECT]" << endl	// object_type
 		<< "1" << endl;		// version
 
 	//ss << id << endl;
@@ -39,7 +39,7 @@ void	dt_obj::from_string(stringstream&ss)
 	string	s;
 
 	ss >> s;
-	if ("OBJECT" != s) {
+	if ("[OBJECT]" != s) {
 		throw	"illegal type";
 	}
 

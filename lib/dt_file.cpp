@@ -19,7 +19,7 @@ const	string		dt_file::to_string(void) const
 {
 	stringstream	ss;
 
-	ss	<< "FILE" << endl	// object_type
+	ss	<< "[FILE]" << endl	// object_type
 		<< "1" << endl;		// version
 
 	ss << layers.size() << endl;
@@ -36,7 +36,7 @@ void	dt_file::from_string(stringstream & ss)
 	string	s;
 
 	ss >> s;
-	if ("FILE" != s) {
+	if ("[FILE]" != s) {
 		throw	"illegal type";
 	}
 

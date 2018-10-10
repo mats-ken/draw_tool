@@ -19,7 +19,7 @@ const	string		dt_group::to_string(void) const
 {
 	stringstream	ss;
 
-	ss	<< "GROUP" << endl	// object_type
+	ss	<< "[GROUP]" << endl	// object_type
 		<< "1" << endl;		// version
 
 	ss	<< objects.size() << endl;
@@ -36,7 +36,7 @@ void	dt_group::from_string(stringstream & ss)
 	string	s;
 
 	ss >> s;
-	if ("GROUP" != s) {
+	if ("[GROUP]" != s) {
 		throw	"illegal type";
 	}
 

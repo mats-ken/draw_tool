@@ -11,7 +11,7 @@ const	string	dt_layer::to_string(void) const
 {
 	stringstream ss;
 
-	ss	<< "LAYER" << endl	// object_type
+	ss	<< "[LAYER]" << endl	// object_type
 		<< "1" << endl;		// version
 
 	//ss << id << endl;
@@ -34,7 +34,7 @@ void	dt_layer::from_string(stringstream&ss)
 	string	s;
 
 	ss >> s;
-	if ("LAYER" != s) {
+	if ("[LAYER]" != s) {
 		throw	"illegal type";
 	}
 

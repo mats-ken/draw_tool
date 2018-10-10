@@ -16,7 +16,7 @@ using	namespace	std;
 const	string	dt_path::to_string(void) const
 {
 	stringstream ss;
-	ss	<< "PATH" << endl	// object_type=path,
+	ss	<< "[PATH]" << endl	// object_type=path,
 		<< "1" << endl		// version=1
 		//<< id << endl
 		<< (int)closed << endl
@@ -49,7 +49,7 @@ void	dt_path::from_string(stringstream&ss)
 	string	s;
 
 	ss >> s;
-	if ("PATH" != s) {
+	if ("[PATH]" != s) {
 		throw	"illegal type";
 	}
 

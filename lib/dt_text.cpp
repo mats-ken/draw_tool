@@ -23,7 +23,7 @@ const	string	dt_text::to_string(void) const
 		lines++;
 	}
 
-	ss	<< "TEXT" << endl	// object_type=text
+	ss	<< "[TEXT]" << endl	// object_type=text
 		<< "1" << endl		// version=1
 		//<< id << endl
 		<< pos.to_string() << endl
@@ -48,7 +48,7 @@ void	dt_text::from_string(stringstream&ss)
 	string	s;
 
 	ss >> s;
-	if ("TEXT" != s) {
+	if ("[TEXT]" != s) {
 		throw	"illegal type";
 	}
 
