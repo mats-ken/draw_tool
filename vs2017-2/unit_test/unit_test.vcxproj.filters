@@ -111,31 +111,31 @@
     <ClInclude Include="..\..\lib\dt_text.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_path\test_path.h">
+    <ClInclude Include="..\..\unit_test\dt_path\test_dt_path.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_from_string.h">
+    <ClInclude Include="..\..\unit_test\dt_path\test_dt_path__to_from_string.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_position\test_position_to_from_string.h">
+    <ClInclude Include="..\..\unit_test\dt_position\test_dt_position__to_from_string.h">
       <Filter>ヘッダー ファイル\unit_test\6.test_dt_position</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_position\test_position.h">
+    <ClInclude Include="..\..\unit_test\dt_position\test_dt_position.h">
       <Filter>ヘッダー ファイル\unit_test\6.test_dt_position</Filter>
     </ClInclude>
     <ClInclude Include="..\..\lib\dt_layer.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_colour\test_colour_to_from_string.h">
+    <ClInclude Include="..\..\unit_test\dt_colour\test_dt_colour__to_from_string.h">
       <Filter>ヘッダー ファイル\unit_test\6.test_dt_colour</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_colour\test_colour.h">
+    <ClInclude Include="..\..\unit_test\dt_colour\test_dt_colour.h">
       <Filter>ヘッダー ファイル\unit_test\6.test_dt_colour</Filter>
     </ClInclude>
     <ClInclude Include="..\..\lib\dt_group.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_path\test_path_to_postscript.h">
+    <ClInclude Include="..\..\unit_test\dt_path\test_dt_path__to_postscript.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_path</Filter>
     </ClInclude>
     <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_from_string.h">
@@ -144,16 +144,16 @@
     <ClInclude Include="..\..\unit_test\dt_group\test_dt_group.h">
       <Filter>ヘッダー ファイル\unit_test\3.test_dt_group</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_obj\test_obj_to_from_string.h">
+    <ClInclude Include="..\..\unit_test\dt_obj\test_dt_obj__to_from_string.h">
       <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_obj\test_obj.h">
+    <ClInclude Include="..\..\unit_test\dt_obj\test_dt_obj.h">
       <Filter>ヘッダー ファイル\unit_test\4.test_dt_obj</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_text\test_text.h">
+    <ClInclude Include="..\..\unit_test\dt_text\test_dt_text.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_from_string.h">
+    <ClInclude Include="..\..\unit_test\dt_text\test_dt_text__to_from_string.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\unit_test\test_dt_layer\test_dt_layer.h">
@@ -162,7 +162,7 @@
     <ClInclude Include="..\..\lib\dt_image.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\unit_test\dt_text\test_text_to_postscript.h">
+    <ClInclude Include="..\..\unit_test\dt_text\test_dt_text__to_postscript.h">
       <Filter>ヘッダー ファイル\unit_test\5.test_dt_text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\unit_test\dt_group\test_dt_group__to_postscript.h">
