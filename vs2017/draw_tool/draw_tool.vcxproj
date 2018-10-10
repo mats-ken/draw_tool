@@ -132,6 +132,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\lib\dt_area.h" />
+    <ClInclude Include="..\..\lib\dt_bitmap.h" />
+    <ClInclude Include="..\..\lib\dt_colour.h" />
+    <ClInclude Include="..\..\lib\dt_file.h" />
+    <ClInclude Include="..\..\lib\dt_group.h" />
+    <ClInclude Include="..\..\lib\dt_image.h" />
+    <ClInclude Include="..\..\lib\dt_layer.h" />
+    <ClInclude Include="..\..\lib\dt_obj.h" />
+    <ClInclude Include="..\..\lib\dt_path.h" />
+    <ClInclude Include="..\..\lib\dt_position.h" />
+    <ClInclude Include="..\..\lib\dt_text.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -142,6 +153,13 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\lib\dt_bitmap.cpp" />
+    <ClCompile Include="..\..\lib\dt_file.cpp" />
+    <ClCompile Include="..\..\lib\dt_group.cpp" />
+    <ClCompile Include="..\..\lib\dt_layer.cpp" />
+    <ClCompile Include="..\..\lib\dt_obj.cpp" />
+    <ClCompile Include="..\..\lib\dt_path.cpp" />
+    <ClCompile Include="..\..\lib\dt_text.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="draw_tool.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -14,10 +14,10 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="ソース ファイル\lib">
-      <UniqueIdentifier>{725f2786-79e5-434a-8b97-caa7b2980a1f}</UniqueIdentifier>
+      <UniqueIdentifier>{009b288a-717e-42b5-b4e6-b71e97ff6c37}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダー ファイル\lib">
-      <UniqueIdentifier>{507f1033-6ef7-45de-bd59-b84dc409f4d6}</UniqueIdentifier>
+      <UniqueIdentifier>{ad6d29cd-cb7f-4088-a34f-03d73707affd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,22 +36,25 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\dt_path.cpp">
+    <ClCompile Include="..\..\lib\dt_bitmap.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\dt_text.cpp">
+    <ClCompile Include="..\..\lib\dt_file.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
     <ClCompile Include="..\..\lib\dt_group.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\dt_obj.cpp">
-      <Filter>ソース ファイル\lib</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\lib\dt_layer.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\dt_bitmap.cpp">
+    <ClCompile Include="..\..\lib\dt_obj.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_path.cpp">
+      <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\dt_text.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,7 +68,25 @@
     <ClInclude Include="resource.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\lib\dt_area.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_bitmap.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_colour.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\lib\dt_file.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_group.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_image.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\dt_layer.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
     <ClInclude Include="..\..\lib\dt_obj.h">
@@ -77,25 +98,7 @@
     <ClInclude Include="..\..\lib\dt_position.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\lib\dt_colour.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\lib\dt_bitmap.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\lib\dt_area.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\lib\dt_text.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\lib\dt_layer.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\lib\dt_group.h">
-      <Filter>ヘッダー ファイル\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\lib\dt_image.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
   </ItemGroup>
