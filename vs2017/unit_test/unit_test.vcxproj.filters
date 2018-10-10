@@ -193,35 +193,8 @@
     <ClCompile Include="..\..\lib\dt_text.cpp">
       <Filter>ソース ファイル\lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_position\test_position.cpp">
-      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_position\test_position_to_from_string.cpp">
-      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_path\test_path.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_from_string.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_colour\test_colour_to_from_string.cpp">
-      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_colour\test_colour.cpp">
-      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_text\test_text.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_from_string.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\unit_test\unit_test_main.cpp">
       <Filter>ソース ファイル\unit_test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_postscript.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
     </ClCompile>
     <ClCompile Include="..\..\lib\dt_group.cpp">
       <Filter>ソース ファイル\lib</Filter>
@@ -231,12 +204,6 @@
     </ClCompile>
     <ClCompile Include="..\..\lib\dt_layer.cpp">
       <Filter>ソース ファイル\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_obj\test_obj.cpp">
-      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_obj\test_obj_to_from_string.cpp">
-      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
     </ClCompile>
     <ClCompile Include="..\..\unit_test\dt_group\test_dt_group.cpp">
       <Filter>ソース ファイル\unit_test\3.test_dt_group</Filter>
@@ -252,9 +219,6 @@
     </ClCompile>
     <ClCompile Include="..\..\lib\dt_bitmap.cpp">
       <Filter>ソース ファイル\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\unit_test\dt_text\test_text_to_postscript.cpp">
-      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
     </ClCompile>
     <ClCompile Include="..\..\unit_test\test_dt_file\test_dt_file.cpp">
       <Filter>ソース ファイル\unit_test\1.test_dt_file</Filter>
@@ -279,6 +243,42 @@
     </ClCompile>
     <ClCompile Include="..\..\lib\dt_file.cpp">
       <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_obj\test_dt_obj.cpp">
+      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_obj\test_dt_obj__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\4.test_dt_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_dt_path.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_dt_path__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_path\test_dt_path__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_dt_text.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_dt_text__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_text\test_dt_text__to_postscript.cpp">
+      <Filter>ソース ファイル\unit_test\5.test_dt_text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_colour\test_dt_colour.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_colour\test_dt_colour__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_colour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_position\test_dt_position.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unit_test\dt_position\test_dt_position__to_from_string.cpp">
+      <Filter>ソース ファイル\unit_test\6.test_dt_position</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
