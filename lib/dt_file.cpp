@@ -22,6 +22,7 @@ const	string		dt_file::to_string(void) const
 	ss	<< "FILE" << endl	// object_type
 		<< "1" << endl;		// version
 
+	ss << layers.size() << endl;
 	for (const auto l : layers) {
 		ss << l.to_string();
 	}
