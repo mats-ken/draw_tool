@@ -31,13 +31,15 @@ void	test_dt_file__to_from_string_path1(void)
 	layer1.groups.push_back(grp);
 	layer1.groups.push_back(grp);
 	layer1.groups.push_back(grp);
-	layer1.name			= "Layer 1";
 	layer1.sel_colour	= dt_colour(0.1, 0.2, 0.3, 0.4);
 	layer1.visible		= true;
 
 	dt_file		file1;
+	layer1.name = "Layer 1";
 	file1.layers.push_back(layer1);
+	layer1.name = "Layer 2";
 	file1.layers.push_back(layer1);
+	layer1.name = "Layer 3";
 	file1.layers.push_back(layer1);
 
 	const	string	s = file1.to_string();

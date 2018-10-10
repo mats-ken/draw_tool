@@ -1,5 +1,6 @@
 FILE
 1
+3
 LAYER
 1
 Layer 1
@@ -833,7 +834,7 @@ Garamond Italic
 4567
 LAYER
 1
-Layer 1
+Layer 2
 3
 0.1
 0.2
@@ -1664,7 +1665,7 @@ Garamond Italic
 4567
 LAYER
 1
-Layer 1
+Layer 3
 3
 0.1
 0.2
