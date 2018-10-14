@@ -27,7 +27,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="draw_tool.cpp">
+    <ClCompile Include="..\..\gui\dotnet\draw_tool.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -59,7 +59,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Form1.h">
+    <ClInclude Include="..\..\gui\dotnet\Form1.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -108,7 +108,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resX">
+    <EmbeddedResource Include="..\..\gui\dotnet\Form1.resX">
       <Filter>リソース ファイル</Filter>
     </EmbeddedResource>
   </ItemGroup>
