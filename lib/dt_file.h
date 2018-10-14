@@ -20,6 +20,16 @@ public:
 	std::vector<dt_layer>			layers;
 
 
+	// Constructors
+	dt_file(void) {}
+	dt_file(const std::string&s) {
+		from_string(s);
+	}
+	dt_file(std::stringstream&ss) {
+		from_string(ss);
+	}
+
+
 	void	new_layer(void) {
 				dt_layer	layer;
 		const	size_t		n = layers.size() + 1;
@@ -32,6 +42,21 @@ public:
 
 	}
 
+
+	void	from_file(const std::string&path) {
+		std::ifstream		ifs(path);
+		std::stringstream	ss;
+
+		ss << ifs.rdbuf();
+		ifs.close();
+
+		from_string(ss);
+	}
+	void	to_file(const std::string&path) const {
+		std::ofstream	ofs(path);
+		ofs << to_string() << std::endl;
+		ofs.close();
+	}
 
 	const	std::string	to_string(void) const;
 	void	from_string(std::stringstream&ss);
