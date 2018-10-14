@@ -128,7 +128,7 @@ namespace draw_tool {
 	private: System::Windows::Forms::HScrollBar^  hScrollBar1;
 	private: System::Windows::Forms::VScrollBar^  vScrollBar1;
 	private: System::Windows::Forms::TrackBar^  trackBarZoom;
-	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDownZoom;
 	private: System::Windows::Forms::Button^  buttonRevert;
 
 
@@ -188,12 +188,12 @@ namespace draw_tool {
 			this->hScrollBar1 = (gcnew System::Windows::Forms::HScrollBar());
 			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
 			this->trackBarZoom = (gcnew System::Windows::Forms::TrackBar());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDownZoom = (gcnew System::Windows::Forms::NumericUpDown());
 			this->buttonRevert = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownZoom))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// buttonSelect
@@ -601,13 +601,15 @@ namespace draw_tool {
 			this->trackBarZoom->Size = System::Drawing::Size(233, 45);
 			this->trackBarZoom->TabIndex = 24;
 			this->trackBarZoom->TabStop = false;
+			this->trackBarZoom->Scroll += gcnew System::EventHandler(this, &Form1::trackBarZoom_Scroll);
 			// 
-			// numericUpDown1
+			// numericUpDownZoom
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(1097, 806);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(75, 19);
-			this->numericUpDown1->TabIndex = 25;
+			this->numericUpDownZoom->Location = System::Drawing::Point(1097, 806);
+			this->numericUpDownZoom->Name = L"numericUpDownZoom";
+			this->numericUpDownZoom->Size = System::Drawing::Size(75, 19);
+			this->numericUpDownZoom->TabIndex = 25;
+			this->numericUpDownZoom->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDownZoom_ValueChanged);
 			// 
 			// buttonRevert
 			// 
@@ -625,7 +627,7 @@ namespace draw_tool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1184, 861);
 			this->Controls->Add(this->buttonRevert);
-			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->numericUpDownZoom);
 			this->Controls->Add(this->trackBarZoom);
 			this->Controls->Add(this->vScrollBar1);
 			this->Controls->Add(this->hScrollBar1);
@@ -659,7 +661,7 @@ namespace draw_tool {
 			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownZoom))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -835,6 +837,10 @@ namespace draw_tool {
 		System::Void hScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
 		}
 		System::Void vScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
+		}
+		System::Void numericUpDownZoom_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void trackBarZoom_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		}
 	};
 }
