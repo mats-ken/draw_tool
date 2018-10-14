@@ -818,6 +818,7 @@ namespace draw_tool {
 		// help
 		System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
+
 		System::Void checkBoxWrap_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			if (checkBoxWrap->Checked) {
 				textBox1->WordWrap = true;
@@ -834,10 +835,12 @@ namespace draw_tool {
 		System::Void buttonRevert_Click(System::Object^  sender, System::EventArgs^  e) {
 			textBox1->Text = s2S(file_stats[current_file_no].file.to_string())->Replace("\r", "\n")->Replace("\n", "\r\n");
 		}
+
 		System::Void hScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
 		}
 		System::Void vScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
 		}
+
 		System::Void numericUpDownZoom_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 		}
 		System::Void trackBarZoom_Scroll(System::Object^  sender, System::EventArgs^  e) {
