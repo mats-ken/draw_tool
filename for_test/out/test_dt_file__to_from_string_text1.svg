@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: MyDrawer -->
+<svg version="1.1"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 1000 600" >
+
+<text transform="matrix(1 0 0 1 123 456)" font-size="12" font-family="Garamond Italic">this  	  
+	is	
+ a
+   test  
+
+   	
+
+  s t r i n g .  </text>
+
+</svg>
+

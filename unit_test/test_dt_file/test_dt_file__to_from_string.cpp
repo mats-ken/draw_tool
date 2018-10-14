@@ -42,6 +42,10 @@ void	test_dt_file__to_from_string_path1(void)
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".myd");
 	ofs << s << endl;
 	ofs.close();
+
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
+	ofs2 << file1.to_svg(true) << endl;
+	ofs2.close();
 }
 
 void	test_dt_file__to_from_string_text1(void)
@@ -71,6 +75,10 @@ void	test_dt_file__to_from_string_text1(void)
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".myd");
 	ofs << s << endl;
 	ofs.close();
+
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
+	ofs2 << file1.to_svg(true) << endl;
+	ofs2.close();
 }
 
 void	test_dt_file__to_from_string_path1000_text1000(void)
@@ -109,4 +117,8 @@ void	test_dt_file__to_from_string_path1000_text1000(void)
 	ofstream	ofs("../../for_test/out/" __FUNCTION__ ".myd");
 	ofs << s << endl;
 	ofs.close();
+
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
+	ofs2 << file1.to_svg(true) << endl;
+	ofs2.close();
 }
