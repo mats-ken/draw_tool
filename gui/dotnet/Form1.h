@@ -8,13 +8,37 @@
 #include	"../../lib/dt_file.h"
 
 
+using	namespace	System;
 using	namespace	std;
 
 
-vector<dt_file>		files;
-vector<size_t>		current_layers;
-vector<dt_area>		current_areas;
-vector<dt_bitmap>	masks;
+#define		S2s(S)	MarshalString(S)				// Converts "System::String"	->	"std::string"
+#define		s2S(s)	(gcnew String((s).c_str()))		// Converts "std::string"		->	"System::String"
+
+
+// •û–@: System::String ‚ğ•W€•¶š—ñ‚É•ÏŠ·‚·‚é
+// https://msdn.microsoft.com/ja-jp/library/1b4az623.aspx
+
+string	MarshalString(System::String^ s)
+{
+	const char* chars = (const char*)(Runtime::InteropServices::Marshal::StringToHGlobalAnsi(s)).ToPointer();
+	const	string os = chars;
+	Runtime::InteropServices::Marshal::FreeHGlobal(System::IntPtr((void*)chars));
+	return	os;
+}
+
+
+struct	file_stat_t {
+	string		path;
+	dt_file		file;
+	size_t		current_layer;
+	dt_area		current_area;
+	dt_bitmap	mask;
+};
+
+
+size_t					current_file_no = 0;
+vector<file_stat_t>		file_stats;
 
 
 namespace draw_tool {
@@ -34,6 +58,16 @@ namespace draw_tool {
 		Form1(void)
 		{
 			InitializeComponent();
+
+			textBox1->Anchor = AnchorStyles::Top + AnchorStyles::Right+ AnchorStyles::Bottom;
+			pictureBox1->Anchor = AnchorStyles::Right + AnchorStyles::Bottom;
+			buttonApply->Anchor = AnchorStyles::Right + AnchorStyles::Bottom;
+
+			webBrowser1->ScrollBarsEnabled = true;
+			textBox1->ScrollBars = ScrollBars::Both;
+			textBox1->WordWrap = false;
+
+			pictureBox1->Image = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height, Drawing::Imaging::PixelFormat::Format24bppRgb);
 
 			proc_tool_buttons("Select");
 		}
@@ -86,6 +120,16 @@ namespace draw_tool {
 	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  simulsaveToolStripMenuItem;
+	private: System::Windows::Forms::WebBrowser^  webBrowser1;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Button^  buttonApply;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::CheckBox^  checkBoxWrap;
+	private: System::Windows::Forms::HScrollBar^  hScrollBar1;
+	private: System::Windows::Forms::VScrollBar^  vScrollBar1;
+	private: System::Windows::Forms::TrackBar^  trackBarZoom;
+	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
+	private: System::Windows::Forms::Button^  buttonRevert;
 
 
 	private:
@@ -121,6 +165,7 @@ namespace draw_tool {
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->simulsaveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exportToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->printToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -135,8 +180,20 @@ namespace draw_tool {
 			this->zoomOutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->simulsaveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->webBrowser1 = (gcnew System::Windows::Forms::WebBrowser());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonApply = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->checkBoxWrap = (gcnew System::Windows::Forms::CheckBox());
+			this->hScrollBar1 = (gcnew System::Windows::Forms::HScrollBar());
+			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
+			this->trackBarZoom = (gcnew System::Windows::Forms::TrackBar());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->buttonRevert = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// buttonSelect
@@ -145,6 +202,7 @@ namespace draw_tool {
 			this->buttonSelect->Name = L"buttonSelect";
 			this->buttonSelect->Size = System::Drawing::Size(28, 23);
 			this->buttonSelect->TabIndex = 0;
+			this->buttonSelect->TabStop = false;
 			this->buttonSelect->Text = L"V";
 			this->buttonSelect->UseVisualStyleBackColor = true;
 			this->buttonSelect->Click += gcnew System::EventHandler(this, &Form1::buttonSelect_Click);
@@ -155,6 +213,7 @@ namespace draw_tool {
 			this->buttonDirectSelect->Name = L"buttonDirectSelect";
 			this->buttonDirectSelect->Size = System::Drawing::Size(28, 23);
 			this->buttonDirectSelect->TabIndex = 1;
+			this->buttonDirectSelect->TabStop = false;
 			this->buttonDirectSelect->Text = L"A";
 			this->buttonDirectSelect->UseVisualStyleBackColor = true;
 			this->buttonDirectSelect->Click += gcnew System::EventHandler(this, &Form1::buttonDirectSelect_Click);
@@ -165,6 +224,7 @@ namespace draw_tool {
 			this->buttonPen->Name = L"buttonPen";
 			this->buttonPen->Size = System::Drawing::Size(28, 23);
 			this->buttonPen->TabIndex = 2;
+			this->buttonPen->TabStop = false;
 			this->buttonPen->Text = L"P";
 			this->buttonPen->UseVisualStyleBackColor = true;
 			this->buttonPen->Click += gcnew System::EventHandler(this, &Form1::buttonPen_Click);
@@ -175,6 +235,7 @@ namespace draw_tool {
 			this->buttonScissors->Name = L"buttonScissors";
 			this->buttonScissors->Size = System::Drawing::Size(28, 23);
 			this->buttonScissors->TabIndex = 3;
+			this->buttonScissors->TabStop = false;
 			this->buttonScissors->Text = L"C";
 			this->buttonScissors->UseVisualStyleBackColor = true;
 			this->buttonScissors->Click += gcnew System::EventHandler(this, &Form1::buttonScissors_Click);
@@ -185,6 +246,7 @@ namespace draw_tool {
 			this->buttonRectangle->Name = L"buttonRectangle";
 			this->buttonRectangle->Size = System::Drawing::Size(28, 23);
 			this->buttonRectangle->TabIndex = 4;
+			this->buttonRectangle->TabStop = false;
 			this->buttonRectangle->Text = L"M";
 			this->buttonRectangle->UseVisualStyleBackColor = true;
 			this->buttonRectangle->Click += gcnew System::EventHandler(this, &Form1::buttonRectangle_Click);
@@ -195,6 +257,7 @@ namespace draw_tool {
 			this->buttonEllipse->Name = L"buttonEllipse";
 			this->buttonEllipse->Size = System::Drawing::Size(28, 23);
 			this->buttonEllipse->TabIndex = 5;
+			this->buttonEllipse->TabStop = false;
 			this->buttonEllipse->Text = L"L";
 			this->buttonEllipse->UseVisualStyleBackColor = true;
 			this->buttonEllipse->Click += gcnew System::EventHandler(this, &Form1::buttonEllipse_Click);
@@ -205,6 +268,7 @@ namespace draw_tool {
 			this->buttonZoom->Name = L"buttonZoom";
 			this->buttonZoom->Size = System::Drawing::Size(28, 23);
 			this->buttonZoom->TabIndex = 6;
+			this->buttonZoom->TabStop = false;
 			this->buttonZoom->Text = L"Z";
 			this->buttonZoom->UseVisualStyleBackColor = true;
 			this->buttonZoom->Click += gcnew System::EventHandler(this, &Form1::buttonZoom_Click);
@@ -215,6 +279,7 @@ namespace draw_tool {
 			this->buttonAnchorPoint->Name = L"buttonAnchorPoint";
 			this->buttonAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonAnchorPoint->TabIndex = 7;
+			this->buttonAnchorPoint->TabStop = false;
 			this->buttonAnchorPoint->Text = L"^";
 			this->buttonAnchorPoint->UseVisualStyleBackColor = true;
 			this->buttonAnchorPoint->Click += gcnew System::EventHandler(this, &Form1::buttonAnchorPoint_Click);
@@ -225,6 +290,7 @@ namespace draw_tool {
 			this->buttonAddAnchorPoint->Name = L"buttonAddAnchorPoint";
 			this->buttonAddAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonAddAnchorPoint->TabIndex = 8;
+			this->buttonAddAnchorPoint->TabStop = false;
 			this->buttonAddAnchorPoint->Text = L"P+";
 			this->buttonAddAnchorPoint->UseVisualStyleBackColor = true;
 			this->buttonAddAnchorPoint->Click += gcnew System::EventHandler(this, &Form1::buttonAddAnchorPoint_Click);
@@ -235,6 +301,7 @@ namespace draw_tool {
 			this->buttonDeleteAnchorPoint->Name = L"buttonDeleteAnchorPoint";
 			this->buttonDeleteAnchorPoint->Size = System::Drawing::Size(28, 23);
 			this->buttonDeleteAnchorPoint->TabIndex = 9;
+			this->buttonDeleteAnchorPoint->TabStop = false;
 			this->buttonDeleteAnchorPoint->Text = L"P-";
 			this->buttonDeleteAnchorPoint->UseVisualStyleBackColor = true;
 			this->buttonDeleteAnchorPoint->Click += gcnew System::EventHandler(this, &Form1::buttonDeleteAnchorPoint_Click);
@@ -245,6 +312,7 @@ namespace draw_tool {
 			this->buttonType->Name = L"buttonType";
 			this->buttonType->Size = System::Drawing::Size(28, 23);
 			this->buttonType->TabIndex = 10;
+			this->buttonType->TabStop = false;
 			this->buttonType->Text = L"T";
 			this->buttonType->UseVisualStyleBackColor = true;
 			this->buttonType->Click += gcnew System::EventHandler(this, &Form1::buttonType_Click);
@@ -255,6 +323,7 @@ namespace draw_tool {
 			this->buttonHand->Name = L"buttonHand";
 			this->buttonHand->Size = System::Drawing::Size(28, 23);
 			this->buttonHand->TabIndex = 11;
+			this->buttonHand->TabStop = false;
 			this->buttonHand->Text = L"H";
 			this->buttonHand->UseVisualStyleBackColor = true;
 			this->buttonHand->Click += gcnew System::EventHandler(this, &Form1::buttonHand_Click);
@@ -265,6 +334,7 @@ namespace draw_tool {
 			this->buttonScale->Name = L"buttonScale";
 			this->buttonScale->Size = System::Drawing::Size(28, 23);
 			this->buttonScale->TabIndex = 12;
+			this->buttonScale->TabStop = false;
 			this->buttonScale->Text = L"S";
 			this->buttonScale->UseVisualStyleBackColor = true;
 			this->buttonScale->Click += gcnew System::EventHandler(this, &Form1::buttonScale_Click);
@@ -275,6 +345,7 @@ namespace draw_tool {
 			this->buttonRotate->Name = L"buttonRotate";
 			this->buttonRotate->Size = System::Drawing::Size(28, 23);
 			this->buttonRotate->TabIndex = 13;
+			this->buttonRotate->TabStop = false;
 			this->buttonRotate->Text = L"R";
 			this->buttonRotate->UseVisualStyleBackColor = true;
 			this->buttonRotate->Click += gcnew System::EventHandler(this, &Form1::buttonRotate_Click);
@@ -285,13 +356,10 @@ namespace draw_tool {
 			this->buttonReflect->Name = L"buttonReflect";
 			this->buttonReflect->Size = System::Drawing::Size(28, 23);
 			this->buttonReflect->TabIndex = 14;
+			this->buttonReflect->TabStop = false;
 			this->buttonReflect->Text = L"O";
 			this->buttonReflect->UseVisualStyleBackColor = true;
 			this->buttonReflect->Click += gcnew System::EventHandler(this, &Form1::buttonReflect_Click);
-			// 
-			// openFileDialog1
-			// 
-			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
 			// labelSelectedTool
 			// 
@@ -310,7 +378,7 @@ namespace draw_tool {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(624, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1184, 24);
 			this->menuStrip1->TabIndex = 16;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -330,7 +398,7 @@ namespace draw_tool {
 			// 
 			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
 			this->openToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
-			this->openToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->openToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->openToolStripMenuItem->Text = L"Open....";
 			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openToolStripMenuItem_Click);
 			// 
@@ -338,21 +406,29 @@ namespace draw_tool {
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
 			this->saveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
-			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->saveAsToolStripMenuItem->Text = L"Save as....";
 			this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveAsToolStripMenuItem_Click);
+			// 
+			// simulsaveToolStripMenuItem
+			// 
+			this->simulsaveToolStripMenuItem->Name = L"simulsaveToolStripMenuItem";
+			this->simulsaveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>(((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Alt)
+				| System::Windows::Forms::Keys::S));
+			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->simulsaveToolStripMenuItem->Text = L"Simul-save";
 			// 
 			// exportToolStripMenuItem
 			// 
 			this->exportToolStripMenuItem->Name = L"exportToolStripMenuItem";
-			this->exportToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->exportToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->exportToolStripMenuItem->Text = L"Export....";
 			this->exportToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exportToolStripMenuItem_Click);
 			// 
@@ -360,7 +436,7 @@ namespace draw_tool {
 			// 
 			this->printToolStripMenuItem->Name = L"printToolStripMenuItem";
 			this->printToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
-			this->printToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->printToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->printToolStripMenuItem->Text = L"Print....";
 			this->printToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::printToolStripMenuItem_Click);
 			// 
@@ -454,19 +530,106 @@ namespace draw_tool {
 			this->aboutToolStripMenuItem->Text = L"About....";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
-			// simulsaveToolStripMenuItem
+			// webBrowser1
 			// 
-			this->simulsaveToolStripMenuItem->Name = L"simulsaveToolStripMenuItem";
-			this->simulsaveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>(((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Alt)
-				| System::Windows::Forms::Keys::S));
-			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
-			this->simulsaveToolStripMenuItem->Text = L"Simul-save";
+			this->webBrowser1->Location = System::Drawing::Point(100, 27);
+			this->webBrowser1->MinimumSize = System::Drawing::Size(20, 20);
+			this->webBrowser1->Name = L"webBrowser1";
+			this->webBrowser1->Size = System::Drawing::Size(730, 400);
+			this->webBrowser1->TabIndex = 17;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(857, 31);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(315, 732);
+			this->textBox1->TabIndex = 18;
+			// 
+			// buttonApply
+			// 
+			this->buttonApply->Location = System::Drawing::Point(1097, 769);
+			this->buttonApply->Name = L"buttonApply";
+			this->buttonApply->Size = System::Drawing::Size(75, 23);
+			this->buttonApply->TabIndex = 19;
+			this->buttonApply->Text = L"Apply";
+			this->buttonApply->UseVisualStyleBackColor = true;
+			this->buttonApply->Click += gcnew System::EventHandler(this, &Form1::buttonApply_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(100, 451);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(730, 400);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 20;
+			this->pictureBox1->TabStop = false;
+			// 
+			// checkBoxWrap
+			// 
+			this->checkBoxWrap->AutoSize = true;
+			this->checkBoxWrap->Location = System::Drawing::Point(857, 773);
+			this->checkBoxWrap->Name = L"checkBoxWrap";
+			this->checkBoxWrap->Size = System::Drawing::Size(49, 16);
+			this->checkBoxWrap->TabIndex = 21;
+			this->checkBoxWrap->Text = L"Wrap";
+			this->checkBoxWrap->UseVisualStyleBackColor = true;
+			this->checkBoxWrap->CheckedChanged += gcnew System::EventHandler(this, &Form1::checkBoxWrap_CheckedChanged);
+			// 
+			// hScrollBar1
+			// 
+			this->hScrollBar1->Location = System::Drawing::Point(100, 431);
+			this->hScrollBar1->Name = L"hScrollBar1";
+			this->hScrollBar1->Size = System::Drawing::Size(730, 17);
+			this->hScrollBar1->TabIndex = 22;
+			// 
+			// vScrollBar1
+			// 
+			this->vScrollBar1->Location = System::Drawing::Point(833, 451);
+			this->vScrollBar1->Name = L"vScrollBar1";
+			this->vScrollBar1->Size = System::Drawing::Size(17, 400);
+			this->vScrollBar1->TabIndex = 23;
+			// 
+			// trackBarZoom
+			// 
+			this->trackBarZoom->Location = System::Drawing::Point(853, 806);
+			this->trackBarZoom->Name = L"trackBarZoom";
+			this->trackBarZoom->Size = System::Drawing::Size(233, 45);
+			this->trackBarZoom->TabIndex = 24;
+			this->trackBarZoom->TabStop = false;
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(1097, 806);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(75, 19);
+			this->numericUpDown1->TabIndex = 25;
+			// 
+			// buttonRevert
+			// 
+			this->buttonRevert->Location = System::Drawing::Point(1016, 769);
+			this->buttonRevert->Name = L"buttonRevert";
+			this->buttonRevert->Size = System::Drawing::Size(75, 23);
+			this->buttonRevert->TabIndex = 26;
+			this->buttonRevert->Text = L"Revert";
+			this->buttonRevert->UseVisualStyleBackColor = true;
+			this->buttonRevert->Click += gcnew System::EventHandler(this, &Form1::buttonRevert_Click);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(624, 441);
+			this->ClientSize = System::Drawing::Size(1184, 861);
+			this->Controls->Add(this->buttonRevert);
+			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->trackBarZoom);
+			this->Controls->Add(this->vScrollBar1);
+			this->Controls->Add(this->hScrollBar1);
+			this->Controls->Add(this->checkBoxWrap);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->buttonApply);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->webBrowser1);
 			this->Controls->Add(this->labelSelectedTool);
 			this->Controls->Add(this->buttonReflect);
 			this->Controls->Add(this->buttonRotate);
@@ -485,11 +648,14 @@ namespace draw_tool {
 			this->Controls->Add(this->buttonSelect);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->MinimumSize = System::Drawing::Size(640, 480);
+			this->MinimumSize = System::Drawing::Size(1200, 900);
 			this->Name = L"Form1";
 			this->Text = L"My Drawer v0.3";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -542,6 +708,15 @@ namespace draw_tool {
 			last_idx = idx;
 		}
 
+		void	redraw(void) {
+			textBox1->Text = s2S(file_stats[current_file_no].file.to_string())->Replace("\r", "\n")->Replace("\n", "\r\n");
+			webBrowser1->DocumentText = s2S(file_stats[current_file_no].file.to_svg(true));
+			Bitmap^		bmp = gcnew Bitmap(webBrowser1->Width, webBrowser1->Height);
+			Rectangle	bb(0, 0, webBrowser1->Width, webBrowser1->Height);	// bounding box
+			webBrowser1->DrawToBitmap(bmp, bb);
+			pictureBox1->Image = bmp;
+		}
+
 		System::Void buttonSelect_Click(System::Object^  sender, System::EventArgs^  e) {
 			proc_tool_buttons("Select");
 		}
@@ -591,10 +766,26 @@ namespace draw_tool {
 		// menu
 		// file
 		System::Void openToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+				file_stat_t		st;
+				st.path = S2s(openFileDialog1->FileName);
+				st.file.from_file(st.path);
+				st.current_layer = 0;
+
+				file_stats.push_back(st);
+
+				redraw();
+
+			}
 		}
 		System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
 		}
 		System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+				file_stats[current_file_no].path = S2s(saveFileDialog1->FileName);
+				file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+			}
 		}
 		System::Void exportToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
@@ -620,6 +811,22 @@ namespace draw_tool {
 		}
 		// help
 		System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		System::Void checkBoxWrap_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			if (checkBoxWrap->Checked) {
+				textBox1->WordWrap = true;
+			} else {
+				textBox1->WordWrap = false;
+			}
+		}
+		System::Void buttonApply_Click(System::Object^  sender, System::EventArgs^  e) {
+			String^	text = gcnew String(textBox1->Text);
+			dt_file	file(S2s(text->Replace("\r\n", "\n")));
+			file_stats[current_file_no].file = file;
+			redraw();
+		}
+		System::Void buttonRevert_Click(System::Object^  sender, System::EventArgs^  e) {
+			textBox1->Text = s2S(file_stats[current_file_no].file.to_string())->Replace("\r", "\n")->Replace("\n", "\r\n");
 		}
 	};
 }
