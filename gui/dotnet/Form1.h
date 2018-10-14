@@ -398,7 +398,7 @@ namespace draw_tool {
 			// 
 			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
 			this->openToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
-			this->openToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->openToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->openToolStripMenuItem->Text = L"Open....";
 			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openToolStripMenuItem_Click);
 			// 
@@ -406,14 +406,16 @@ namespace draw_tool {
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
 			this->saveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
-			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->saveAsToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>(((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Shift)
+				| System::Windows::Forms::Keys::S));
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->saveAsToolStripMenuItem->Text = L"Save as....";
 			this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveAsToolStripMenuItem_Click);
 			// 
@@ -422,13 +424,13 @@ namespace draw_tool {
 			this->simulsaveToolStripMenuItem->Name = L"simulsaveToolStripMenuItem";
 			this->simulsaveToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>(((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Alt)
 				| System::Windows::Forms::Keys::S));
-			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->simulsaveToolStripMenuItem->Text = L"Simul-save";
 			// 
 			// exportToolStripMenuItem
 			// 
 			this->exportToolStripMenuItem->Name = L"exportToolStripMenuItem";
-			this->exportToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->exportToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->exportToolStripMenuItem->Text = L"Export....";
 			this->exportToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exportToolStripMenuItem_Click);
 			// 
@@ -436,7 +438,7 @@ namespace draw_tool {
 			// 
 			this->printToolStripMenuItem->Name = L"printToolStripMenuItem";
 			this->printToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
-			this->printToolStripMenuItem->Size = System::Drawing::Size(193, 22);
+			this->printToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->printToolStripMenuItem->Text = L"Print....";
 			this->printToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::printToolStripMenuItem_Click);
 			// 
