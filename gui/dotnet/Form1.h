@@ -584,6 +584,7 @@ namespace draw_tool {
 			this->hScrollBar1->Name = L"hScrollBar1";
 			this->hScrollBar1->Size = System::Drawing::Size(730, 17);
 			this->hScrollBar1->TabIndex = 22;
+			this->hScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Form1::hScrollBar1_Scroll);
 			// 
 			// vScrollBar1
 			// 
@@ -591,6 +592,7 @@ namespace draw_tool {
 			this->vScrollBar1->Name = L"vScrollBar1";
 			this->vScrollBar1->Size = System::Drawing::Size(17, 400);
 			this->vScrollBar1->TabIndex = 23;
+			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Form1::vScrollBar1_Scroll);
 			// 
 			// trackBarZoom
 			// 
@@ -829,6 +831,10 @@ namespace draw_tool {
 		}
 		System::Void buttonRevert_Click(System::Object^  sender, System::EventArgs^  e) {
 			textBox1->Text = s2S(file_stats[current_file_no].file.to_string())->Replace("\r", "\n")->Replace("\n", "\r\n");
+		}
+		System::Void hScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
+		}
+		System::Void vScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
 		}
 	};
 }
