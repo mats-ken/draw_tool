@@ -96,7 +96,7 @@ void	dt_path::from_string(stringstream&ss)
 }
 
 
-const	string	dt_path::to_xml(void) const
+const	string	dt_path::to_xml(const bool finalise) const
 {
 	return	"";
 }

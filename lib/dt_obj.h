@@ -41,7 +41,7 @@ public:
 		from_string(ss);
 	}
 
-	const	std::string	to_xml(void) const;
+	const	std::string	to_xml(const bool finalise = false) const;
 	void	from_xml(const std::string&str);
 
 	const	std::string	to_svg(const bool finalise = false) const;

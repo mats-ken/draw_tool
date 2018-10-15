@@ -63,7 +63,7 @@ void	dt_file::from_string(stringstream & ss)
 }
 
 
-const	string		dt_file::to_xml(void) const
+const	string		dt_file::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 

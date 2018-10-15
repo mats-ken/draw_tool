@@ -72,7 +72,7 @@ void	dt_obj::from_string(stringstream&ss)
 }
 
 
-const	string	dt_obj::to_xml(void) const
+const	string	dt_obj::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 

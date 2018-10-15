@@ -67,7 +67,7 @@ void	dt_layer::from_string(stringstream&ss)
 }
 
 
-const	string	dt_layer::to_xml(void) const
+const	string	dt_layer::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 

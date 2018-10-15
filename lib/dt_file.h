@@ -59,22 +59,22 @@ public:
 	}
 	void	to_xml_file(const std::string&path) const {
 		std::ofstream	ofs(path);
-		ofs << to_xml() << std::endl;
+		ofs << to_xml(true) << std::endl;
 		ofs.close();
 	}
 	void	to_svg_file(const std::string&path) const {
 		std::ofstream	ofs(path);
-		ofs << to_svg() << std::endl;
+		ofs << to_svg(true) << std::endl;
 		ofs.close();
 	}
 	void	to_postscript_file(const std::string&path) const {
 		std::ofstream	ofs(path);
-		ofs << to_postscript() << std::endl;
+		ofs << to_postscript(true) << std::endl;
 		ofs.close();
 	}
 	void	to_pdf_file(const std::string&path) const {
 		std::ofstream	ofs(path);
-		ofs << to_pdf() << std::endl;
+		ofs << to_pdf(true) << std::endl;
 		ofs.close();
 	}
 
@@ -85,7 +85,7 @@ public:
 		from_string(ss);
 	}
 
-	const	std::string	to_xml(void) const;
+	const	std::string	to_xml(const bool finalise = false) const;
 	void	from_xml(const std::string&str);
 
 	const	std::string	to_svg(const bool finalise = false, double width = 0.0, double height = 0.0) const;
