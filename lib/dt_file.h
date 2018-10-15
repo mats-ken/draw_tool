@@ -57,6 +57,26 @@ public:
 		ofs << to_string() << std::endl;
 		ofs.close();
 	}
+	void	to_xml_file(const std::string&path) const {
+		std::ofstream	ofs(path);
+		ofs << to_xml() << std::endl;
+		ofs.close();
+	}
+	void	to_svg_file(const std::string&path) const {
+		std::ofstream	ofs(path);
+		ofs << to_svg() << std::endl;
+		ofs.close();
+	}
+	void	to_postscript_file(const std::string&path) const {
+		std::ofstream	ofs(path);
+		ofs << to_postscript() << std::endl;
+		ofs.close();
+	}
+	void	to_pdf_file(const std::string&path) const {
+		std::ofstream	ofs(path);
+		ofs << to_pdf() << std::endl;
+		ofs.close();
+	}
 
 	const	std::string	to_string(void) const;
 	void	from_string(std::stringstream&ss);

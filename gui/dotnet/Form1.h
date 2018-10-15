@@ -817,15 +817,15 @@ namespace draw_tool {
 			}
 		}
 		System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-			if (!file_stats[current_file_no].new_file) {
-				file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
-			} else {
+			if (file_stats[current_file_no].new_file) {
 				saveFileDialog1->FileName = s2S(file_stats[current_file_no].path);
 				if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 					file_stats[current_file_no].path = S2s(saveFileDialog1->FileName);
-					file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+				} else {
+					return;
 				}
 			}
+			file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
 		}
 		System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
@@ -834,11 +834,29 @@ namespace draw_tool {
 			}
 		}
 		System::Void simulsaveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (file_stats[current_file_no].new_file) {
+				saveFileDialog1->FileName = s2S(file_stats[current_file_no].path);
+				if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+					file_stats[current_file_no].path = S2s(saveFileDialog1->FileName);
+				} else {
+					return;
+				}
+			}
+
 			//save as myd
+			file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+
 			//save as xml
+			file_stats[current_file_no].file.to_xml_file(file_stats[current_file_no].path + ".xml");
+
 			//save as svg
+			file_stats[current_file_no].file.to_svg_file(file_stats[current_file_no].path + ".svg");
+
 			//save as postscript
+			file_stats[current_file_no].file.to_postscript_file(file_stats[current_file_no].path + ".ps");
+
 			//save as PDF
+			file_stats[current_file_no].file.to_pdf_file(file_stats[current_file_no].path + ".pdf");
 		}
 		System::Void exportToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
