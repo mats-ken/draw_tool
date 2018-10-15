@@ -153,6 +153,7 @@
     <ClInclude Include="..\..\lib\dt_path.h" />
     <ClInclude Include="..\..\lib\dt_position.h" />
     <ClInclude Include="..\..\lib\dt_text.h" />
+    <ClInclude Include="..\..\lib\finalisers.h" />
     <ClInclude Include="..\..\unit_test\dt_colour\test_dt_colour.h" />
     <ClInclude Include="..\..\unit_test\dt_colour\test_dt_colour__to_from_string.h" />
     <ClInclude Include="..\..\unit_test\dt_group\test_dt_group.h" />

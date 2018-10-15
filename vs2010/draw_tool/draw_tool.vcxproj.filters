@@ -101,6 +101,9 @@
     <ClInclude Include="..\..\lib\dt_text.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\lib\finalisers.h">
+      <Filter>ヘッダー ファイル\lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
