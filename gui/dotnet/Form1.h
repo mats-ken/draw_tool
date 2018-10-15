@@ -847,16 +847,20 @@ namespace draw_tool {
 			file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
 
 			//save as xml
-			file_stats[current_file_no].file.to_xml_file(file_stats[current_file_no].path + ".xml");
+			string	new_path = S2s(System::IO::Path::ChangeExtension(s2S(file_stats[current_file_no].path), "xml"));
+			file_stats[current_file_no].file.to_xml_file(new_path);
 
 			//save as svg
-			file_stats[current_file_no].file.to_svg_file(file_stats[current_file_no].path + ".svg");
+			new_path = S2s(System::IO::Path::ChangeExtension(s2S(file_stats[current_file_no].path), "svg"));
+			file_stats[current_file_no].file.to_svg_file(new_path);
 
 			//save as postscript
-			file_stats[current_file_no].file.to_postscript_file(file_stats[current_file_no].path + ".ps");
+			new_path = S2s(System::IO::Path::ChangeExtension(s2S(file_stats[current_file_no].path), "ps"));
+			file_stats[current_file_no].file.to_postscript_file(new_path);
 
 			//save as PDF
-			file_stats[current_file_no].file.to_pdf_file(file_stats[current_file_no].path + ".pdf");
+			new_path = S2s(System::IO::Path::ChangeExtension(s2S(file_stats[current_file_no].path), "pdf"));
+			file_stats[current_file_no].file.to_pdf_file(new_path);
 		}
 		System::Void exportToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
