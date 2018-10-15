@@ -22,7 +22,7 @@ const	string	dt_layer::to_string(void) const
 		<< (int)visible << endl;
 
 	ss << groups.size() << endl;
-	for (const auto g : groups) {
+	for (const auto&g : groups) {
 		ss << g.to_string();
 	}
 
@@ -53,9 +53,10 @@ void	dt_layer::from_string(stringstream&ss)
 		visible = (0 != i);
 
 		ss >> i;
+		groups.resize(i);
+
 		for (int k = 0; k < i; k++) {
-			dt_group	group(ss);
-			groups.push_back(group);
+			groups[k].from_string(ss);
 		}
 
 		break;
@@ -73,7 +74,7 @@ const	string	dt_layer::to_xml(const bool finalise) const
 
 	ss << "<layer>" << endl;
 
-	for (const auto g : groups) {
+	for (const auto&g : groups) {
 		ss << g.to_xml();
 	}
 
@@ -96,12 +97,12 @@ const	string	dt_layer::to_svg(const bool finalise) const
 		ss << SVG_HEADER;
 	}
 
-	for (const auto g : groups) {
-		ss << SVG_FOOTER << endl;
+	for (const auto&g : groups) {
+		ss << g.to_svg();
 	}
 
 	if (finalise) {
-		ss << "</svg>" << endl;
+		ss << SVG_FOOTER << endl;
 	}
 
 	return	ss.str();
@@ -121,7 +122,7 @@ const	string	dt_layer::to_postscript(const bool finalise) const
 		ss << "%!" << endl;
 	}
 
-	for (const auto g : groups) {
+	for (const auto&g : groups) {
 		ss << g.to_postscript();
 	}
 
@@ -138,7 +139,7 @@ const	string	dt_layer::to_pdf(const bool finalise) const
 {
 	stringstream	ss;
 
-	for (auto g : groups) {
+	for (const auto&g : groups) {
 		ss << g.to_postscript();
 	}
 

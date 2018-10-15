@@ -23,8 +23,8 @@ const	string		dt_xxx::to_string(void) const
 		<< "1" << endl;		// version
 
 	ss	<< yyy.size() << endl;
-	for (auto o : yyy) {
-		ss << o.to_string();
+	for (const auto&y : yyy) {
+		ss << y.to_string();
 	}
 
 	return	ss.str();

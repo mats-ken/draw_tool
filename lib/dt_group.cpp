@@ -24,7 +24,7 @@ const	string		dt_group::to_string(void) const
 		<< "1" << endl;		// version
 
 	ss	<< objects.size() << endl;
-	for (const auto o : objects) {
+	for (const auto&o : objects) {
 		ss << o.to_string();
 	}
 
@@ -49,11 +49,12 @@ void	dt_group::from_string(stringstream & ss)
 		//ss >> id;
 
 		ss >> i;
+		objects.resize(i);
+
 		for (int k = 0; k < i; k++) {
-			dt_obj	obj;
-			obj.from_string(ss);
-			objects.push_back(obj);
+			objects[k].from_string(ss);
 		}
+
 		break;
 
 	default:
@@ -69,7 +70,7 @@ const	string		dt_group::to_xml(const bool finalise) const
 
 	ss << "<group>" << endl;
 
-	for (const auto o : objects) {
+	for (const auto&o : objects) {
 		ss << o.to_xml();
 	}
 
@@ -91,7 +92,7 @@ const	string		dt_group::to_svg(const bool finalise) const
 		ss << SVG_HEADER;
 	}
 
-	for (const auto o : objects) {
+	for (const auto&o : objects) {
 		ss << o.to_svg();
 	}
 
@@ -115,7 +116,7 @@ const	string		dt_group::to_postscript(const bool finalise) const
 		ss << "%!" << endl;
 	}
 
-	for (const auto o : objects) {
+	for (const auto&o : objects) {
 		ss << o.to_postscript();
 	}
 

@@ -34,10 +34,15 @@ void	test_dt_file__to_postscript(void)
 	ofs << file.to_postscript(true);
 	ofs.close();
 
-	// to svg
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".svg");
-	ofs2 << file.to_svg(true);
+	// to xml
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofs2 << file.to_xml(true);
 	ofs2.close();
+
+	// to svg
+	ofstream	ofs3("../../for_test/out/" __FUNCTION__ ".svg");
+	ofs3 << file.to_svg(true);
+	ofs3.close();
 }
 
 

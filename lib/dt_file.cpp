@@ -24,7 +24,7 @@ const	string		dt_file::to_string(void) const
 		<< "1" << endl;		// version
 
 	ss << layers.size() << endl;
-	for (const auto l : layers) {
+	for (const auto&l : layers) {
 		ss << l.to_string();
 	}
 
@@ -49,9 +49,10 @@ void	dt_file::from_string(stringstream & ss)
 		//ss >> id;
 
 		ss >> i;
+		layers.resize(i);
+
 		for (int k = 0; k < i; k++) {
-			dt_layer	layer(ss);
-			layers.push_back(layer);
+			layers[k].from_string(ss);
 		}
 
 		break;
@@ -69,7 +70,7 @@ const	string		dt_file::to_xml(const bool finalise) const
 
 	ss << "<file>" << endl;
 
-	for (const auto l : layers) {
+	for (const auto&l : layers) {
 		ss << l.to_xml();
 	}
 
@@ -90,7 +91,7 @@ const	string	dt_file::to_svg(const bool finalise, double width, double height) c
 		ss << SVG_HEADER;
 	}
 
-	for (const auto l : layers) {
+	for (const auto&l : layers) {
 		ss << l.to_svg();
 	}
 
@@ -115,7 +116,7 @@ const	string		dt_file::to_postscript(const bool finalise) const
 		ss << "%!" << endl;
 	}
 
-	for (const auto l : layers) {
+	for (const auto&l : layers) {
 		ss << l.to_postscript();
 	}
 

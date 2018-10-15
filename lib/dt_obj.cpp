@@ -54,13 +54,11 @@ void	dt_obj::from_string(stringstream&ss)
 
 		ss >> s;
 		if ("path" == s) {
-			dt_path		path;
-			path.from_string(ss);
-			paths.push_back(path);
+			paths.resize(1);
+			paths[0].from_string(ss);
 		} else if ("text" == s) {
-			dt_text		text;
-			text.from_string(ss);
-			texts.push_back(text);
+			texts.resize(1);
+			texts[0].from_string(ss);
 		}
 
 		break;

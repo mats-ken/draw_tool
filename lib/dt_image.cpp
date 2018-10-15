@@ -23,7 +23,7 @@ const	std::string		dt_XXX::to_string(void) const
 		<< "1" << endl;		// version
 
 	ss	<< objects.size() << endl;
-	for (auto o : objects) {
+	for (const auto&o : objects) {
 		ss << o.to_string();
 	}
 
