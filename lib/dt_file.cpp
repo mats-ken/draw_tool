@@ -67,6 +67,13 @@ const	string		dt_file::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 
+	ss << "<file>" << endl;
+
+	for (const auto l : layers) {
+		ss << l.to_xml();
+	}
+
+	ss << "</file>" << endl;
 
 	return	ss.str();
 }

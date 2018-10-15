@@ -71,6 +71,13 @@ const	string	dt_layer::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 
+	ss << "<layer>" << endl;
+
+	for (const auto g : groups) {
+		ss << g.to_xml();
+	}
+
+	ss << "</layer>" << endl;
 
 	return	ss.str();
 }

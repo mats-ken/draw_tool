@@ -67,6 +67,13 @@ const	string		dt_group::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 
+	ss << "<group>" << endl;
+
+	for (const auto o : objects) {
+		ss << o.to_xml();
+	}
+
+	ss << "</group>" << endl;
 
 	return	ss.str();
 }

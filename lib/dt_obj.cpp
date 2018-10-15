@@ -76,6 +76,15 @@ const	string	dt_obj::to_xml(const bool finalise) const
 {
 	stringstream	ss;
 
+	ss << "<object>" << endl;
+
+	if (0 < paths.size()) {
+		ss << paths[0].to_xml();
+	} else if (0 < texts.size()) {
+		ss << texts[0].to_xml();
+	}
+
+	ss << "</object>" << endl;
 
 	return	ss.str();
 }
