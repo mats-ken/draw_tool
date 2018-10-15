@@ -7,6 +7,8 @@
 #include	<fstream>
 #include	<algorithm>
 
+#include	"finalisers.h"
+
 #include	"dt_obj.h"
 
 
@@ -88,10 +90,18 @@ const	string	dt_obj::to_svg(const bool finalise) const
 {
 	stringstream	ss;
 
+	if (finalise) {
+		ss << SVG_HEADER;
+	}
+
 	if (0 < paths.size()) {
 		ss << paths[0].to_svg();
 	} else if (0 < texts.size()) {
 		ss << texts[0].to_svg();
+	}
+
+	if (finalise) {
+		ss << "</svg>" << endl;
 	}
 
 	return	ss.str();

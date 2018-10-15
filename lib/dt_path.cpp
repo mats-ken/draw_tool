@@ -7,6 +7,8 @@
 #include	<fstream>
 #include	<algorithm>
 
+#include	"finalisers.h"
+
 #include	"dt_path.h"
 
 
@@ -112,15 +114,7 @@ const	string	dt_path::to_svg(const bool finalise) const
 	const	double	height =  600.0;	// dummy
 
 	if (finalise) {
-		ss << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: MyDrawer -->
-<svg version="1.1"
-xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-x="0px" y="0px"
-viewBox="0 0 1000 600" >
-
-)###";
+		ss << SVG_HEADER;
 	}
 
 	ss	<< "<path" << endl
@@ -139,7 +133,7 @@ viewBox="0 0 1000 600" >
 	ss << "\"/>" << endl << endl;
 
 	if (finalise) {
-		ss << "</svg>" << endl;
+		ss << SVG_FOOTER << endl;
 	}
 
 	return	ss.str();

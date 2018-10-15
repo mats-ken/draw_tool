@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 
+#include	"finalisers.h"
 
 
 #include "dt_bitmap.h"

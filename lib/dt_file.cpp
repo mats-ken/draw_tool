@@ -7,6 +7,7 @@
 #include	<fstream>
 #include	<algorithm>
 
+#include	"finalisers.h"
 #include	"dt_bitmap.h"
 
 #include	"dt_file.h"
@@ -79,15 +80,7 @@ const	string	dt_file::to_svg(const bool finalise, double width, double height) c
 	stringstream	ss;
 
 	if (finalise) {
-		ss << R"###(<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: MyDrawer -->
-<svg version="1.1"
-xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-x="0px" y="0px"
-viewBox="0 0 1000 600" >
-
-)###";
+		ss << SVG_HEADER;
 	}
 
 	for (const auto l : layers) {
@@ -95,7 +88,7 @@ viewBox="0 0 1000 600" >
 	}
 
 	if (finalise) {
-		ss << "</svg>" << endl;
+		ss << SVG_FOOTER << endl;
 	}
 
 	return	ss.str();
