@@ -441,6 +441,7 @@ namespace draw_tool {
 				| System::Windows::Forms::Keys::S));
 			this->simulsaveToolStripMenuItem->Size = System::Drawing::Size(195, 22);
 			this->simulsaveToolStripMenuItem->Text = L"Simul-save";
+			this->simulsaveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::simulsaveToolStripMenuItem_Click);
 			// 
 			// exportToolStripMenuItem
 			// 
@@ -831,6 +832,13 @@ namespace draw_tool {
 				file_stats[current_file_no].path = S2s(saveFileDialog1->FileName);
 				file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
 			}
+		}
+		System::Void simulsaveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			//save as myd
+			//save as xml
+			//save as svg
+			//save as postscript
+			//save as PDF
 		}
 		System::Void exportToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
