@@ -5,6 +5,8 @@
 #include	<vector>
 #include	<map>
 
+#include	<math.h>
+
 #include	"../../lib/dt_file.h"
 
 
@@ -16,7 +18,7 @@ using	namespace	std;
 #define		s2S(s)	(gcnew String((s).c_str()))		// Converts "std::string"		->	"System::String"
 
 
-// •û–@: System::String ‚ğ•W€•¶š—ñ‚É•ÏŠ·‚·‚é
+// æ–¹æ³•: System::String ã‚’æ¨™æº–æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 // https://msdn.microsoft.com/ja-jp/library/1b4az623.aspx
 
 string	MarshalString(System::String^ s)
@@ -29,14 +31,17 @@ string	MarshalString(System::String^ s)
 
 
 struct	file_stat_t {
-	string		path;
-	dt_file		file;
-	size_t		current_layer;
-	dt_area		current_area;
-	dt_bitmap	mask;
+	bool			new_file;
+	string			path;
+	dt_file			file;
+	size_t			current_layer_no;
+	dt_position		centre;
+	double			scale;
+	dt_bitmap		mask;
 };
 
 
+size_t					new_file_count = 0;
 size_t					current_file_no = 0;
 vector<file_stat_t>		file_stats;
 
@@ -130,6 +135,7 @@ namespace draw_tool {
 	private: System::Windows::Forms::TrackBar^  trackBarZoom;
 	private: System::Windows::Forms::NumericUpDown^  numericUpDownZoom;
 	private: System::Windows::Forms::Button^  buttonRevert;
+	private: System::Windows::Forms::ToolStripMenuItem^  newToolStripMenuItem;
 
 
 	private:
@@ -162,6 +168,7 @@ namespace draw_tool {
 			this->labelSelectedTool = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->newToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -384,15 +391,23 @@ namespace draw_tool {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
-				this->openToolStripMenuItem,
-					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem, this->simulsaveToolStripMenuItem, this->exportToolStripMenuItem,
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
+				this->newToolStripMenuItem,
+					this->openToolStripMenuItem, this->saveToolStripMenuItem, this->saveAsToolStripMenuItem, this->simulsaveToolStripMenuItem, this->exportToolStripMenuItem,
 					this->printToolStripMenuItem
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::P));
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
 			this->fileToolStripMenuItem->Text = L"File";
+			// 
+			// newToolStripMenuItem
+			// 
+			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
+			this->newToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::N));
+			this->newToolStripMenuItem->Size = System::Drawing::Size(195, 22);
+			this->newToolStripMenuItem->Text = L"New";
+			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::newToolStripMenuItem_Click);
 			// 
 			// openToolStripMenuItem
 			// 
@@ -597,6 +612,8 @@ namespace draw_tool {
 			// trackBarZoom
 			// 
 			this->trackBarZoom->Location = System::Drawing::Point(853, 806);
+			this->trackBarZoom->Maximum = 200;
+			this->trackBarZoom->Minimum = -200;
 			this->trackBarZoom->Name = L"trackBarZoom";
 			this->trackBarZoom->Size = System::Drawing::Size(233, 45);
 			this->trackBarZoom->TabIndex = 24;
@@ -606,9 +623,12 @@ namespace draw_tool {
 			// numericUpDownZoom
 			// 
 			this->numericUpDownZoom->Location = System::Drawing::Point(1097, 806);
+			this->numericUpDownZoom->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDownZoom->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDownZoom->Name = L"numericUpDownZoom";
 			this->numericUpDownZoom->Size = System::Drawing::Size(75, 19);
 			this->numericUpDownZoom->TabIndex = 25;
+			this->numericUpDownZoom->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->numericUpDownZoom->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDownZoom_ValueChanged);
 			// 
 			// buttonRevert
@@ -771,21 +791,40 @@ namespace draw_tool {
 
 		// menu
 		// file
+		System::Void newToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			file_stat_t		st;
+			st.new_file = true;
+			st.path = "New File " + to_string(new_file_count++);
+			st.current_layer_no = 0;
+
+			file_stats.push_back(st);
+			current_file_no = file_stats.size() - 1;
+
+			redraw();
+		}
 		System::Void openToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 				file_stat_t		st;
 				st.path = S2s(openFileDialog1->FileName);
 				st.file.from_file(st.path);
-				st.current_layer = 0;
+				st.current_layer_no = 0;
 
 				file_stats.push_back(st);
+				current_file_no = file_stats.size() - 1;
 
 				redraw();
-
 			}
 		}
 		System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-			file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+			if (!file_stats[current_file_no].new_file) {
+				file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+			} else {
+				saveFileDialog1->FileName = s2S(file_stats[current_file_no].path);
+				if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+					file_stats[current_file_no].path = S2s(saveFileDialog1->FileName);
+					file_stats[current_file_no].file.to_file(file_stats[current_file_no].path);
+				}
+			}
 		}
 		System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
@@ -841,9 +880,25 @@ namespace draw_tool {
 		System::Void vScrollBar1_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) {
 		}
 
-		System::Void numericUpDownZoom_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-		}
+		bool	zoom_processed = false;
 		System::Void trackBarZoom_Scroll(System::Object^  sender, System::EventArgs^  e) {
+			if (!zoom_processed) {
+				file_stats[current_file_no].scale = pow(10.0, trackBarZoom->Value / 100.0);
+				const	int		scale = file_stats[current_file_no].scale * 100.0;
+				numericUpDownZoom->Value = (Decimal)scale;
+				zoom_processed = true;
+			} else {
+				zoom_processed = false;
+			}
+		}
+		System::Void numericUpDownZoom_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+			if (!zoom_processed) {
+				file_stats[current_file_no].scale = (int)numericUpDownZoom->Value / 100.0;
+				trackBarZoom->Value = (int)log10(file_stats[current_file_no].scale);
+				zoom_processed = true;
+			} else {
+				zoom_processed = false;
+			}
 		}
 	};
 }
