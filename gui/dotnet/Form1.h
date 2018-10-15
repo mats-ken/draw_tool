@@ -41,7 +41,7 @@ struct	file_stat_t {
 };
 
 
-size_t					new_file_count = 0;
+size_t					new_file_count = 1;
 size_t					current_file_no = 0;
 vector<file_stat_t>		file_stats;
 
@@ -136,6 +136,7 @@ namespace draw_tool {
 	private: System::Windows::Forms::NumericUpDown^  numericUpDownZoom;
 	private: System::Windows::Forms::Button^  buttonRevert;
 	private: System::Windows::Forms::ToolStripMenuItem^  newToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  windowsToolStripMenuItem;
 
 
 	private:
@@ -197,6 +198,7 @@ namespace draw_tool {
 			this->trackBarZoom = (gcnew System::Windows::Forms::TrackBar());
 			this->numericUpDownZoom = (gcnew System::Windows::Forms::NumericUpDown());
 			this->buttonRevert = (gcnew System::Windows::Forms::Button());
+			this->windowsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->BeginInit();
@@ -379,9 +381,9 @@ namespace draw_tool {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->fileToolStripMenuItem,
-					this->editToolStripMenuItem, this->viewToolStripMenuItem, this->helpToolStripMenuItem
+					this->editToolStripMenuItem, this->viewToolStripMenuItem, this->windowsToolStripMenuItem, this->helpToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -544,7 +546,7 @@ namespace draw_tool {
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(119, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->aboutToolStripMenuItem->Text = L"About....";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
@@ -641,6 +643,12 @@ namespace draw_tool {
 			this->buttonRevert->Text = L"Revert";
 			this->buttonRevert->UseVisualStyleBackColor = true;
 			this->buttonRevert->Click += gcnew System::EventHandler(this, &Form1::buttonRevert_Click);
+			// 
+			// windowsToolStripMenuItem
+			// 
+			this->windowsToolStripMenuItem->Name = L"windowsToolStripMenuItem";
+			this->windowsToolStripMenuItem->Size = System::Drawing::Size(68, 20);
+			this->windowsToolStripMenuItem->Text = L"Windows";
 			// 
 			// Form1
 			// 
@@ -795,7 +803,7 @@ namespace draw_tool {
 		System::Void newToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			file_stat_t		st;
 			st.new_file = true;
-			st.path = "New File " + to_string(new_file_count++);
+			st.path = "New File " + to_string(new_file_count++) + ".myd";
 			st.current_layer_no = 0;
 
 			file_stats.push_back(st);
