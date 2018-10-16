@@ -25,22 +25,22 @@ const	string	dt_text::to_string(void) const
 		lines++;
 	}
 
-	ss	<< "[TEXT]" << endl	// object_type=text
-		<< "1" << endl		// version=1
-		//<< id << endl
-		<< pos.to_string() << endl
-		<< line_colour.to_string() << endl
-		<< fill_colour.to_string() << endl
-		<< rotation << endl
-		<< lines << endl
-		<< text << endl
-		<< mag_h << endl
-		<< mag_v << endl
-		<< font_name << endl
-		<< font_size << endl
-		<< underline << endl
-		<< cursor_pos[0] << endl
-		<< cursor_pos[1] << endl;
+	ss	<< "[TEXT]"					<< endl		// object_type=text
+		<< "1"						<< endl		// version=1
+		//<< id						<< endl
+		<< pos.to_string()			<< endl
+		<< line_colour.to_string()	<< endl
+		<< fill_colour.to_string()	<< endl
+		<< rotation					<< endl
+		<< lines					<< endl
+		<< text						<< endl
+		<< mag_h					<< endl
+		<< mag_v					<< endl
+		<< font_name				<< endl
+		<< font_size				<< endl
+		<< underline				<< endl
+		<< cursor_pos[0]			<< endl
+		<< cursor_pos[1]			<< endl;
 
 	return	ss.str();
 }

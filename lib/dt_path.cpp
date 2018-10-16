@@ -18,20 +18,20 @@ using	namespace	std;
 const	string	dt_path::to_string(void) const
 {
 	stringstream ss;
-	ss	<< "[PATH]" << endl	// object_type=path,
-		<< "1" << endl		// version=1
-		//<< id << endl
-		<< (int)closed << endl
-		<< line_width << endl
-		<< line_colour.to_string() << endl
-		<< fill_colour.to_string() << endl
-		<< position.to_string() << endl
-		<< scale.to_string() << endl
-		<< rotation << endl
-		<< edge_shape << endl
-		<< (int)text_style << endl
-		//<< text_id << endl
-		<< anchor_pts.size() << endl;
+	ss	<< "[PATH]"							<< endl		// object_type=path,
+		<< "1"								<< endl		// version=1
+		//<< id								<< endl
+		<< (int)closed						<< endl
+		<< line_width						<< endl
+		<< line_colour.to_string()			<< endl
+		<< fill_colour.to_string()			<< endl
+		<< position.to_string()				<< endl
+		<< scale.to_string()				<< endl
+		<< rotation							<< endl
+		<< edge_shape						<< endl
+		<< (int)text_style					<< endl
+		//<< text_id						<< endl
+		<< anchor_pts.size()				<< endl;
 	for (const auto&pt : anchor_pts) {
 		ss << pt.to_string() << endl;
 	}
@@ -100,18 +100,19 @@ void	dt_path::from_string(stringstream&ss)
 const	string	dt_path::to_xml(const bool finalise) const
 {
 	stringstream ss;
-	ss	<< "<PATH>" << endl	// object_type=path,
-		<< "<version>1</version>" << endl		// version=1
-		//<< id << endl
-		<< "<closed>"		<< (int)closed				<< "</closed>"			<< endl
-		<< "<line_width>"	<< line_width				<< "</line_width>"		<< endl
-		<< "<line_colour>"	<< line_colour.to_string()	<< "</line_colour>"		<< endl
-		<< "<fill_colour>"	<< fill_colour.to_string()	<< "</fill_colour>"		<< endl
-		<< "<position>"		<< position.to_string()		<< "</position>"		<< endl
-		<< "<scale>"		<< scale.to_string()		<< "</scale>"			<< endl
-		<< "<rotation>"		<< rotation					<< "</rotation>"		<< endl
-		<< "<edge_shape>"	<< edge_shape				<< "</edge_shape>"		<< endl
-		<< "<text_style>"	<< (int)text_style			<< "</(int)text_style>"	<< endl;
+
+	ss	<< "<PATH>"					<< endl		// object_type=path,
+		<< "<version>1</version>"	<< endl		// version=1
+		//							<< id << endl
+		<< "<closed>"				<< (int)closed				<< "</closed>"			<< endl
+		<< "<line_width>"			<< line_width				<< "</line_width>"		<< endl
+		<< "<line_colour>"			<< line_colour.to_string()	<< "</line_colour>"		<< endl
+		<< "<fill_colour>"			<< fill_colour.to_string()	<< "</fill_colour>"		<< endl
+		<< "<position>"				<< position.to_string()		<< "</position>"		<< endl
+		<< "<scale>"				<< scale.to_string()		<< "</scale>"			<< endl
+		<< "<rotation>"				<< rotation					<< "</rotation>"		<< endl
+		<< "<edge_shape>"			<< edge_shape				<< "</edge_shape>"		<< endl
+		<< "<text_style>"			<< (int)text_style			<< "</(int)text_style>"	<< endl;
 		//<< text_id << endl
 	for (const auto&pt : anchor_pts) {
 		ss << "<anchor_pt>" << pt.to_string() << "</anchor_pt>" << endl;
