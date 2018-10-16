@@ -922,7 +922,9 @@ namespace draw_tool {
 		System::Void trackBarZoom_Scroll(System::Object^  sender, System::EventArgs^  e) {
 			if (!zoom_processed) {
 				file_stats[current_file_no].scale = pow(10.0, trackBarZoom->Value / 100.0);
-				const	int		scale = file_stats[current_file_no].scale * 100.0;
+				int		scale = file_stats[current_file_no].scale * 100.0;
+scale=max(scale, 1);
+scale=min(scale, 10000);
 				numericUpDownZoom->Value = (Decimal)scale;
 				zoom_processed = true;
 			} else {
