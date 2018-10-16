@@ -93,7 +93,34 @@ void	dt_text::from_string(stringstream&ss)
 
 const	string	dt_text::to_xml(const bool finalise) const
 {
-	return	"";
+	stringstream	ss;
+	string			s;
+
+	int		lines = 0;
+	stringstream	ss2(text);
+	while (getline(ss2, s)) {
+		lines++;
+	}
+
+	ss	<< "<text>"					<< endl		// object_type=path,
+		<< "<version>1</version>"	<< endl		// version=1
+		//							<< id << endl
+		<< "<position>"				<< pos.to_string()			<< "</position>"		<< endl
+		<< "<line_colour.>"			<< line_colour.to_string()	<< "</line_colour.>"	<< endl
+		<< "<fill_colour.>"			<< fill_colour.to_string()	<< "</fill_colour.>"	<< endl
+		<< "<rotation>"				<< rotation					<< "</rotation>"		<< endl
+		<< "<lines>"				<< lines					<< "</lines>"			<< endl
+		<< "<text>"					<< text						<< "</text>"			<< endl
+		<< "<mag_h>"				<< mag_h					<< "</mag_h>"			<< endl
+		<< "<mag_v>"				<< mag_v					<< "</mag_v>"			<< endl
+		<< "<font_name	>"			<< font_name				<< "</font_name	>"		<< endl
+		<< "<font_size	>"			<< font_size				<< "</font_size	>"		<< endl
+		<< "<underline	>"			<< underline				<< "</underline	>"		<< endl;
+		//<< "<cursor_pos>"			<< cursor_pos[0]			<< "</cursor_pos>"		<< endl
+		//<< "<cursor_pos>"			<< cursor_pos[1]			<< "</cursor_pos>"		<< endl
+	ss << "</text>" << endl;
+
+	return	ss.str();
 }
 
 void	dt_text::from_xml(const string&str)

@@ -2,7 +2,7 @@
 <layer>
 <group>
 <object>
-<PATH>
+<path>
 <version>1</version>
 <closed>0</closed>
 <line_width>12</line_width>
@@ -39,7 +39,7 @@
 150</anchor_pt>
 <anchor_pt>300
 100</anchor_pt>
-
+</path>
 </object>
 </group>
 </layer>

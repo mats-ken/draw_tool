@@ -101,7 +101,7 @@ const	string	dt_path::to_xml(const bool finalise) const
 {
 	stringstream ss;
 
-	ss	<< "<PATH>"					<< endl		// object_type=path,
+	ss	<< "<path>"					<< endl		// object_type=path,
 		<< "<version>1</version>"	<< endl		// version=1
 		//							<< id << endl
 		<< "<closed>"				<< (int)closed				<< "</closed>"			<< endl
@@ -117,7 +117,7 @@ const	string	dt_path::to_xml(const bool finalise) const
 	for (const auto&pt : anchor_pts) {
 		ss << "<anchor_pt>" << pt.to_string() << "</anchor_pt>" << endl;
 	}
-	ss << endl;
+	ss << "</path>" << endl;
 
 	return	ss.str();
 }
