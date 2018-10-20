@@ -7,6 +7,8 @@
 
 #include	<math.h>
 
+#include "FormAbout.h"
+
 #include	"../../lib/dt_file.h"
 
 
@@ -894,6 +896,8 @@ namespace draw_tool {
 		}
 		// help
 		System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+			//Application::Run(gcnew FormAbout());
+			//FormAbout::Show();
 		}
 
 		System::Void checkBoxWrap_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {

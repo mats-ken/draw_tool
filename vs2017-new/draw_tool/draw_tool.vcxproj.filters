@@ -63,6 +63,9 @@
     <ClInclude Include="..\..\lib\dt_text.h">
       <Filter>ヘッダー ファイル\lib</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gui\dotnet\FormAbout.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
