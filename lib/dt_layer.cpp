@@ -150,3 +150,55 @@ const	string	dt_layer::to_pdf(const bool finalise) const
 void dt_layer::rasterise(dt_bitmap & bmp) const
 {
 }
+
+
+
+#if		0
+class	object {
+	int		id;
+
+	virtual	std::string		to_string(void) = 0;
+};
+
+
+class	path : public object {
+	std::string		to_string(void) {
+		std::stringstream	ss;
+
+		return	ss.str();
+	}
+};
+
+
+class	text : public object {
+	std::string		to_string(void) {
+		std::stringstream	ss;
+
+		return	ss.str();
+	}
+};
+
+
+class	layer_new {
+	std::vector<object*>	objects;
+
+	void	register_object(const object*const obj) {
+		objects.push_back((object*)obj);
+	}
+};
+
+
+static	void	test(void)
+{
+	std::vector<object*>	objects;
+
+	path	pa;
+	text	te;
+
+
+	objects.push_back(new path());
+	objects.push_back(new text());
+	objects.push_back(&pa);
+	objects.push_back(&te);
+}
+#endif
