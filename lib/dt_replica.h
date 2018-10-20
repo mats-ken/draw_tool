@@ -2,6 +2,9 @@
 #define		DT_REPLICA_H
 
 
+//特定のオブジェクトのレプリカとして本体が編集されたら一緒に変化する
+
+
 class	dt_replica {
 private:
 
