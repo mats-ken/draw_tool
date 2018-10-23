@@ -35,7 +35,7 @@ void	test_dt_file__to_postscript_path1(void)
 	ofs.close();
 
 	// to xml
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".mydx");
 	ofs2 << file.to_xml(true);
 	ofs2.close();
 
@@ -66,7 +66,7 @@ void	test_dt_file__to_postscript_text1(void)
 	ofs.close();
 
 	// to xml
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".mydx");
 	ofs2 << file.to_xml(true);
 	ofs2.close();
 
@@ -99,7 +99,7 @@ void	test_dt_file__to_postscript_oval(void)
 	ofs.close();
 
 	// to xml
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".mydx");
 	ofs2 << file.to_xml(true);
 	ofs2.close();
 
@@ -132,7 +132,7 @@ void	test_dt_file__to_postscript_rectangle(void)
 	ofs.close();
 
 	// to xml
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".mydx");
 	ofs2 << file.to_xml(true);
 	ofs2.close();
 
@@ -165,7 +165,7 @@ void	test_dt_file__to_postscript_text(void)
 	ofs.close();
 
 	// to xml
-	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".xml");
+	ofstream	ofs2("../../for_test/out/" __FUNCTION__ ".mydx");
 	ofs2 << file.to_xml(true);
 	ofs2.close();
 
