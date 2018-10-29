@@ -937,9 +937,9 @@ namespace draw_tool {
 		}
 		System::Void numericUpDownZoom_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 			if (!zoom_processed) {
-				file_stats[current_file_no].scale = (int)numericUpDownZoom->Value / 100.0;
-				trackBarZoom->Value = (int)log10(file_stats[current_file_no].scale);
-				zoom_processed = true;
+				//////file_stats[current_file_no].scale = (int)numericUpDownZoom->Value / 100.0;
+				//////trackBarZoom->Value = (int)log10(file_stats[current_file_no].scale);
+				//////zoom_processed = true;
 			} else {
 				zoom_processed = false;
 			}
