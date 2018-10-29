@@ -188,6 +188,7 @@ namespace draw_tool {
 			this->viewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zoomInToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zoomOutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->windowsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->webBrowser1 = (gcnew System::Windows::Forms::WebBrowser());
@@ -200,7 +201,6 @@ namespace draw_tool {
 			this->trackBarZoom = (gcnew System::Windows::Forms::TrackBar());
 			this->numericUpDownZoom = (gcnew System::Windows::Forms::NumericUpDown());
 			this->buttonRevert = (gcnew System::Windows::Forms::Button());
-			this->windowsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBarZoom))->BeginInit();
@@ -538,6 +538,12 @@ namespace draw_tool {
 			this->zoomOutToolStripMenuItem->Text = L"Zoom Out";
 			this->zoomOutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::zoomOutToolStripMenuItem_Click);
 			// 
+			// windowsToolStripMenuItem
+			// 
+			this->windowsToolStripMenuItem->Name = L"windowsToolStripMenuItem";
+			this->windowsToolStripMenuItem->Size = System::Drawing::Size(68, 20);
+			this->windowsToolStripMenuItem->Text = L"Windows";
+			// 
 			// helpToolStripMenuItem
 			// 
 			this->helpToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->aboutToolStripMenuItem });
@@ -548,7 +554,7 @@ namespace draw_tool {
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(119, 22);
 			this->aboutToolStripMenuItem->Text = L"About....";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
@@ -645,12 +651,6 @@ namespace draw_tool {
 			this->buttonRevert->Text = L"Revert";
 			this->buttonRevert->UseVisualStyleBackColor = true;
 			this->buttonRevert->Click += gcnew System::EventHandler(this, &Form1::buttonRevert_Click);
-			// 
-			// windowsToolStripMenuItem
-			// 
-			this->windowsToolStripMenuItem->Name = L"windowsToolStripMenuItem";
-			this->windowsToolStripMenuItem->Size = System::Drawing::Size(68, 20);
-			this->windowsToolStripMenuItem->Text = L"Windows";
 			// 
 			// Form1
 			// 
