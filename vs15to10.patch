@@ -49,42 +49,15 @@ Index: draw_tool/draw_tool.vcxproj
    </PropertyGroup>
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
      <ConfigurationType>Application</ConfigurationType>
-Index: draw_tool/draw_tool.vcxproj.filters
+Index: draw_tool/draw_tool.vcxproj.user
 ===================================================================
---- draw_tool/draw_tool.vcxproj.filters	(revision 226)
-+++ draw_tool/draw_tool.vcxproj.filters	(working copy)
-@@ -89,9 +89,6 @@
-     <ClInclude Include="..\..\lib\dt_layer.h">
-       <Filter>ヘッダー ファイル\lib</Filter>
-     </ClInclude>
--    <ClInclude Include="..\..\lib\dt_group.h">
--      <Filter>ヘッダー ファイル\lib</Filter>
--    </ClInclude>
-   </ItemGroup>
-   <ItemGroup>
-     <ResourceCompile Include="app.rc">
-Index: draw_tool/Form1.h
-===================================================================
---- draw_tool/Form1.h	(revision 226)
-+++ draw_tool/Form1.h	(working copy)
-@@ -477,7 +477,7 @@
- #pragma endregion
- 
- 		void	proc_tool_buttons(const string&name) {
--			const	map<string, int>		names = {
-+			const	map<string, int>		names/* = {
- 				{ "Select", 0 },
- 				{ "Direct Select", 1 },
- 				{ "Anchor Point", 2 },
-@@ -493,7 +493,7 @@
- 				{ "Zoom", 12 },
- 				{ "Hand", 13 },
- 				{ "Scissors", 14 },
--			};
-+			}*/;
- 			cli::array<System::Windows::Forms::Button^>^	buttons = {
- 				buttonSelect,
- 				buttonDirectSelect,
+--- draw_tool/draw_tool.vcxproj.user	(nonexistent)
++++ draw_tool/draw_tool.vcxproj.user	(working copy)
+@@ -0,0 +1,3 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++</Project>
+\ No newline at end of file
 Index: unit_test/unit_test.vcxproj
 ===================================================================
 --- unit_test/unit_test.vcxproj	(revision 226)
@@ -121,20 +94,3 @@ Index: unit_test/unit_test.vcxproj
    </PropertyGroup>
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
      <ConfigurationType>Application</ConfigurationType>
-Index: unit_test/unit_test.vcxproj.filters
-===================================================================
---- unit_test/unit_test.vcxproj.filters	(revision 226)
-+++ unit_test/unit_test.vcxproj.filters	(working copy)
-@@ -163,12 +163,6 @@
-     <ClCompile Include="..\..\unit_test\unit_test_main.cpp">
-       <Filter>ソース ファイル\unit_test</Filter>
-     </ClCompile>
--    <ClCompile Include="..\..\unit_test\dt_path\test_path_to_postscript.cpp">
--      <Filter>ソース ファイル\unit_test\dt_path</Filter>
--    </ClCompile>
--    <ClCompile Include="..\..\lib\dt_group.cpp">
--      <Filter>ソース ファイル\lib</Filter>
--    </ClCompile>
-     <ClCompile Include="..\..\lib\dt_obj.cpp">
-       <Filter>ソース ファイル\lib</Filter>
-     </ClCompile>
